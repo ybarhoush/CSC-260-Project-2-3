@@ -116,8 +116,8 @@ public class Editor {
     }
 
     /**
-     * 
-     * @return
+     * Retrieves the content pane layer so that you can add an object to it.
+     * @return content pane
      */
     private Container getContentPane() {
         return frame.getContentPane();
