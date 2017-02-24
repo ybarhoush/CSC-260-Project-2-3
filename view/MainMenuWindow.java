@@ -7,7 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * JPanel class that represents the main.Editor Menu of the game.
+ * This is the first window that the player will see when running the game.
+ * From here the player is able to enter a game mode.
  */
 public class MainMenuWindow extends JPanel {
 
@@ -24,8 +25,7 @@ public class MainMenuWindow extends JPanel {
 
     /**
      * Constructor for creating a new main.Editor Menu.
-     *
-     * @param mainListener Listener callbacks for the main.Editor Japplet.
+     * @param mainListener Listener callbacks for the main.Editor.
      */
     public MainMenuWindow(Editor mainListener) {
         this.mainListener = mainListener;
@@ -33,6 +33,9 @@ public class MainMenuWindow extends JPanel {
         initGUI();
     }
 
+    /**
+     * Initializes the GUI
+     */
     private void initGUI() {
 
         JLabel set = new JLabel(SET);

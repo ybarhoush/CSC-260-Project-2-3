@@ -5,13 +5,12 @@ import model.CardModel;
 import java.awt.*;
 
 /**
- * {@link Shape} subclass that renders a Diamond for a Card.
+ * Creates a diamond for a card.
  */
 public class DiamondShape extends Shape {
 
     /**
-     * Creates a new DiamondShapeView
-     *
+     * Constructs a diamond shape
      * @param color Color of Diamond
      * @param shade Shade of Diamond
      */
@@ -19,21 +18,28 @@ public class DiamondShape extends Shape {
         super(color, shade);
     }
 
+    /**
+     * Paints the diamond based on the shading being
+     * set by the card that holds all the shapes.
+     * @param g Graphics to draw on
+     */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         if (shade != CardModel.Shade.OPEN) {
             drawDiamond(g, true);
-
             if (shade == CardModel.Shade.STRIPED) {
                 shadeStripped(g);
             }
         }
-
         drawDiamond(g, false);
 
     }
 
+    /**
+     * Draws a diamond on a card.
+     * @param g Graphics to draw on
+     * @param filled if shape is solid color or empty
+     */
     private void drawDiamond(Graphics g, boolean filled) {
         g.setColor(color);
         int paddingX = getWidth() / 2 - SHAPE_WIDTH / 2;

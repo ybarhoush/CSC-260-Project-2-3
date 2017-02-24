@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * View that renders a Set card.
+ * View that displays a card.
  */
 public class CardView extends JPanel {
 
@@ -24,8 +24,7 @@ public class CardView extends JPanel {
     private List<Shape> shapeViewList;
 
     /**
-     * Constructor for creating a new CardView.
-     *
+     * Creates a new set Card
      * @param cardModel CardModel data to display as view.
      */
     public CardView(CardModel cardModel) {
@@ -39,9 +38,11 @@ public class CardView extends JPanel {
         setBackground(Color.WHITE);
         addShapes();
         toggleSelection();
-
     }
 
+    /**
+     * Adds shapes to the card.
+     */
     private void addShapes() {
         for (int i = 0; i < cardModel.getShapeNum(); i++) {
             Shape shape = ShapeFactory.buildShape(cardModel);
@@ -51,9 +52,8 @@ public class CardView extends JPanel {
     }
 
     /**
-     * Returns the CardModel that is represented as the CardView.
-     *
-     * @return
+     * Returns the card that is represented view.
+     * @return cardModel
      */
     public CardModel getCardModel() {
         return cardModel;
@@ -65,21 +65,23 @@ public class CardView extends JPanel {
         } else {
             setBorder(nullBorder);
         }
-
     }
 
     /**
-     * Highlights the specified CardView.
-     * Call {@link #setHighlightColor(Color)} to set before calling.
+     * Highlights a card when being used
+     * in the algorithm that displays a hint
+     * or a set of cards to the player.
      */
     public void highlight() {
         setBackground(highlightColor);
-
         for (Shape shapeView : shapeViewList) {
             shapeView.setHighlightColor(highlightColor);
         }
     }
 
+    /**
+     * Unhighlights a card.
+     */
     public void unHighlight() {
         setHighlightColor(defaultColor);
         highlight();
@@ -87,9 +89,8 @@ public class CardView extends JPanel {
 
 
     /**
-     * Sets the highlight color of the CardView.
-     *
-     * @param highlightColor Color to highlight with.
+     * Highlights by changing the background color.
+     * @param highlightColor Color to highlight with
      */
     public void setHighlightColor(Color highlightColor) {
         this.highlightColor = highlightColor;

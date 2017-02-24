@@ -3,12 +3,17 @@ package view;
 import javax.swing.*;
 
 /**
- * JFrame view to cycle through highlighted sets.
+ * Window to notify user on how many sets exist in tutorial mode.
  */
 public class TutorialSets extends JFrame {
 
     private JLabel message;
 
+    /**
+     * Creates a new window that displays a message to the user to notify them on how
+     * many sets exist amongst the displayed cards.
+     * @param n number of sets
+     */
     public TutorialSets(int n){
         setLayout(new BoxLayout(getContentPane() , BoxLayout.Y_AXIS));
         String messageNum;
