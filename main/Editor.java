@@ -111,7 +111,6 @@ public class Editor {
             }
         }
     }
-
     private Container getContentPane() {
         return frame.getContentPane();
     }
