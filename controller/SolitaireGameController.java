@@ -24,7 +24,6 @@ public class SolitaireGameController extends SolitaireCmdbarView implements Game
 
     /**
      * Constructor that initializes the game controller of the solitaire mode.
-     *
      * @param m    GameModel
      * @param v    GameView
      * @param main Editor
