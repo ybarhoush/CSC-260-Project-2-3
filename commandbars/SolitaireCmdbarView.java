@@ -6,9 +6,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * SolitaireCmdbarView.java
+ * Represents Solitaire mode view .
+ */
 public class SolitaireCmdbarView extends JPanel {
-
 
     private static JButton addThreeButton = new JButton("Add Three Cards");
     private static JButton showHintButton = new JButton("Hint");
@@ -17,13 +19,18 @@ public class SolitaireCmdbarView extends JPanel {
     private static Object SolitaireCmdbarListener;
     private static Object listener;
 
+    /**
+     * Constructor that initializes the command bar of the solitaire mode.
+     */
     public SolitaireCmdbarView() {
         super();
         this.newGameButton = new JButton(NEW_GAME_LABEL);
         iniSolitaireCmdBar();
-//        setBackground(new Color(240, 127, 180));
     }
 
+    /**
+     * Sets up the buttons and canvas and registers the listeners.
+     */
     private void iniSolitaireCmdBar() {
 
         newGameButton.addActionListener(new SolitaireCmdbarView.NewGameListener());
@@ -36,6 +43,10 @@ public class SolitaireCmdbarView extends JPanel {
 
     }
 
+    /**
+     *
+     * @param solitaireGameController
+     */
     public static void attachListener(SolitaireGameController solitaireGameController) {
         SolitaireCmdbarListener = listener;
     }
