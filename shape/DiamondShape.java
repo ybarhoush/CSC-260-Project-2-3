@@ -5,7 +5,8 @@ import model.CardModel;
 import java.awt.*;
 
 /**
- * {@link Shape} subclass that renders a Diamond for a Card.
+ * DiamondShape.java
+ * Represents a Diamond for a Card.
  */
 public class DiamondShape extends Shape {
 
@@ -34,6 +35,11 @@ public class DiamondShape extends Shape {
 
     }
 
+    /**
+     * Draws a diamond.
+     * @param g Graphics
+     * @param filled true if filled / false if not
+     */
     private void drawDiamond(Graphics g, boolean filled) {
         g.setColor(color);
         int paddingX = getWidth() / 2 - SHAPE_WIDTH / 2;

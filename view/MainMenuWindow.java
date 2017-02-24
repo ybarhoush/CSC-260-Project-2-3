@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
+ * MainMenuWindow.java
  * JPanel class that represents the main.Editor Menu of the game.
  */
 public class MainMenuWindow extends JPanel {
@@ -48,7 +49,7 @@ public class MainMenuWindow extends JPanel {
     }
 
     /**
-     * Solitaire button is pressed.
+     * What to do when Solitaire button is pressed.
      */
     private class SolitaireButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -57,7 +58,7 @@ public class MainMenuWindow extends JPanel {
     }
 
     /**
-     * Tutorial button is pressed.
+     * What to do when Tutorial button is pressed.
      */
     private class TutorialButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -66,7 +67,7 @@ public class MainMenuWindow extends JPanel {
     }
 
     /**
-     * Quit button is pressed.
+     * What to do when Quit button is pressed.
      */
     private class QuitButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {

@@ -5,19 +5,18 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * This class creates a deck of cards which will be used
+ * DeckModel.java
+ * Represents a deck of cards which will be used
  * to play the game of set.
  */
 public class DeckModel {
 
     private ArrayList<CardModel> deck;  //holds 81 cards
     private int index;                  //points next unseen card
-
-
     protected final int DECK_LENGTH = 81;   //total cards in deck
 
     /**
-     * Creates a new deck object.
+     * Constructor that creates a new deck object.
      */
     public DeckModel(){
         this.deck = new ArrayList<>(DECK_LENGTH);
@@ -64,6 +63,7 @@ public class DeckModel {
     }
 
     /**
+     * True iff the deck has at least three cards left.
      * @return true iff deck has at least three cards left.
      */
     public boolean hasThreeCards(){
@@ -74,6 +74,7 @@ public class DeckModel {
     }
 
     /**
+     * True iff deck is empty.
      * @return true iff deck is empty
      */
     private boolean isEmpty(){

@@ -12,6 +12,7 @@ import java.util.*;
 import java.util.List;
 
 /**
+ * GameView.java
  * View class that renders the game board and the current 12/15 active cards.
  */
 public class GameView extends JPanel implements Observer {
@@ -44,6 +45,10 @@ public class GameView extends JPanel implements Observer {
         updateCardViews(gameModel.getCardsOnTable());
     }
 
+    /**
+     * Updates the cards on the screen.
+     * @param cardModels Card
+     */
     private void updateCardViews(List<CardModel> cardModels) {
         removeAll();
         revalidate();
@@ -112,6 +117,9 @@ public class GameView extends JPanel implements Observer {
         }
     }
 
+    /**
+     * Unhighlight all cards.
+     */
     private void unhighlightAllCards() {
         for (CardView cardView : cardViewMap.values()) {
             cardView.unHighlight();
