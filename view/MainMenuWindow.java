@@ -1,5 +1,5 @@
 package view;
-import Editor;
+import main.Editor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * JPanel class that represents the Editor Menu of the game.
+ * JPanel class that represents the main.Editor Menu of the game.
  */
 public class MainMenuWindow extends JPanel {
 
@@ -21,9 +21,9 @@ public class MainMenuWindow extends JPanel {
     private JButton quit;
 
     /**
-     * Constructor for creating a new Editor Menu.
+     * Constructor for creating a new main.Editor Menu.
      *
-     * @param mainListener Listener callbacks for the Editor Japplet.
+     * @param mainListener Listener callbacks for the main.Editor Japplet.
      */
     public MainMenuWindow(Editor mainListener) {
         this.mainListener = mainListener;

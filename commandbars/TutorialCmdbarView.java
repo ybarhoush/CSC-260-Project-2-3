@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class TutorialCmdbarView extends JPanel{
 
     private static JButton getHintButton = new JButton("Show All Sets");
-    private static final String NEW_GAME_LABEL = "New Game";
+    private static final String NEW_GAME_LABEL = "New main.Game";
     protected JButton newGameButton;
     private static Object listener;
     private static Object TutorialCmdbarListener;

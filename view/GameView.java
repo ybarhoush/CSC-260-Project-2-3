@@ -75,7 +75,7 @@ public class GameView extends JPanel implements Observer {
     /**
      * Attaches the game controller to the current GameView
      *
-     * @param controller Game controller to attach.
+     * @param controller main.Game controller to attach.
      */
     public void attachListener(GameViewListener controller) {
         this.controller = controller;

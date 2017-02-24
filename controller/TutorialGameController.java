@@ -1,6 +1,6 @@
 package controller;
 
-import Editor;
+import main.Editor;
 import model.CardModel;
 import model.GameModel;
 import view.GameView;
