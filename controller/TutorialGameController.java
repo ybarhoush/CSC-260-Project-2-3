@@ -13,7 +13,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * This class holds the view and the model togther and allows communication
+ * TutorialGameController.java
+ * Represents the controls of the game screen of the Solitaire mode.
+ * This class holds the view and the model together and allows communication
  * between the data and what the user sees.
  */
 
@@ -31,7 +33,11 @@ public class TutorialGameController extends TutorialCmdbarView implements GameVi
         mainListener = main;
     }
 
-
+    /**
+     * Empty method of cardClicked in GameViewListener.
+     *
+     * @param c the card that the user clicks
+     */
     public void cardClicked(CardModel c) {
     }
 
@@ -43,10 +49,9 @@ public class TutorialGameController extends TutorialCmdbarView implements GameVi
     }
 
     /**
-     * This will have a window pop up and tell the user
-     * how many sets exist in the cards displayed. Then
-     * it will play a short video by highlighting sets
-     * that exist with 3 second intervals.
+     * Lets a window pop up and tells the user how many sets are existing
+     * among the displayed cards. Then it will play a short video by
+     * highlighting sets that exist with 3 second intervals.
      */
     public static void showAllSets() {
         List<List<CardModel>> sets = gameModel.getAllSets();
@@ -62,10 +67,11 @@ public class TutorialGameController extends TutorialCmdbarView implements GameVi
             Timer timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
                 int count = 0;
+
                 public void run() {
                     gameView.highlightOneSet(sets.get(count));
-                    count ++;
-                    if(count == setSize)
+                    count++;
+                    if (count == setSize)
                         timer.cancel();
                 }
             }, delay, period);
