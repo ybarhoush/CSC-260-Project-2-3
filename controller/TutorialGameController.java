@@ -13,7 +13,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * This class holds the view and the model togther and allows communication
+ * TutorialGameController.java
+ * Represents the controls of the game screen of the Solitaire mode.
+ * This class holds the view and the model together and allows communication
  * between the data and what the user sees.
  */
 
@@ -31,7 +33,10 @@ public class TutorialGameController extends TutorialCmdbarView implements GameVi
         mainListener = main;
     }
 
-
+    /**
+     *
+     * @param c
+     */
     public void cardClicked(CardModel c) {
     }
 
