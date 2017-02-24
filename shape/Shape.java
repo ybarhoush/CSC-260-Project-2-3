@@ -6,7 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Abstract class that acts a base for all other Shapes.
+ * Abstract shape class that is used to create
+ * all the other shapes on the card.
  */
 public abstract class Shape extends JPanel {
 
@@ -20,8 +21,7 @@ public abstract class Shape extends JPanel {
     private Color highlightColor;
 
     /**
-     * Constructor for creating a new ShapeView.
-     *
+     * Creates a new shape
      * @param color Color of Shape.
      * @param shade Shade of shape.
      */
@@ -29,20 +29,22 @@ public abstract class Shape extends JPanel {
         this.color = color;
         this.shade = shade;
         this.highlightColor = Color.WHITE;
-
         setOpaque(false);
     }
 
-    @Override
+    /**
+     * Paints the shape based on the shading being
+     * set by the card that holds all the shapes.
+     * @param g
+     */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(color);
     }
 
     /**
-     * Renders stripes using the {@link #highlightColor} to emulate stripped
-     * shading.
-     *
+     * Draws horizontal lines on the card to
+     * indicate a form of shading.
      * @param g Graphics to draw on.
      */
     protected void shadeStripped(Graphics g) {
@@ -54,7 +56,6 @@ public abstract class Shape extends JPanel {
 
     /**
      * Sets the highlight color of the shading.
-     *
      * @param highlightColor Color to set.
      */
     public void setHighlightColor(Color highlightColor) {

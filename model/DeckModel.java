@@ -13,7 +13,6 @@ public class DeckModel {
     private ArrayList<CardModel> deck;  //holds 81 cards
     private int index;                  //points next unseen card
 
-
     protected final int DECK_LENGTH = 81;   //total cards in deck
 
     /**

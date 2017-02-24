@@ -20,6 +20,15 @@ public class CardModel {
     private Color color;        //color of shapes on card
     private boolean isSelected; //if card is selected by player
 
+    /**
+     * Creates a new cardModel given a number that will represent
+     * the number of shapes the card holds, shape on the card, shade
+     * that all the shapes share, color of shapes.
+     * @param n number of shapes
+     * @param s shape(s) on card
+     * @param ss shading on shapes
+     * @param c color of shapes
+     */
     protected CardModel(int n, Shape s, Shade ss, Color c){
         this.shapeNum = n;
         this.shape = s;

@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * GameModel is the backbone of the game. Using the observer pattern
- * the gamemodel is able to see how the gameView changes (user input)
+ * the gameModel is able to see how the gameView changes (user input)
  * and reacts appropriately with proper methods.
  */
 public class GameModel extends Observable{

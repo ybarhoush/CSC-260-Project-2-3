@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * "ViewController" that acts as the glue between the main.Game Model, View, and
+ * ViewController that allows communcation between the GameModel, View, and
  * Controller.
  */
 public class Game extends JPanel {
