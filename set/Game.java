@@ -36,8 +36,8 @@ public class Game extends JPanel {
         this.gameMode = mode;
         setLayout(new BorderLayout());
 
-        gameModel = new GameModel();
-        gameView = new GameView(gameModel);
+        this.gameModel = new GameModel();
+        this.gameView = new GameView(gameModel);
 
         if (mode == Editor.GameMode.TUTORIAL) {
             TutorialGameController = new TutorialGameController(gameModel, gameView, main);
