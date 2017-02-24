@@ -10,10 +10,9 @@ import java.awt.*;
 public class ShapeFactory {
 
     /**
-     * Returns the corresponding ShapeView for a specific CardModel.
-     *
+     * Returns the corresponding Shape for a specific CardModel.
      * @param cardModel Card model
-     * @return New instance of ShapeView.
+     * @return New instance of Shape
      */
     public static Shape buildShape(CardModel cardModel) {
         CardModel.Shape shape = cardModel.getShape();

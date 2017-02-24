@@ -5,12 +5,12 @@ import model.CardModel;
 import java.awt.*;
 
 /**
- * Subclass the renders a square on the card.
+ * Creates a square for a card
  */
 public class SquareShape extends Shape {
 
     /**
-     * Constructor for the SquareShapeView.
+     * Constructs a square shape
      * @param color Color of the square.
      * @param shade Shade of the square.
      */
@@ -18,9 +18,13 @@ public class SquareShape extends Shape {
         super(color, shade);
     }
 
+    /**
+     * Paints the square based on the shading being
+     * set by the card that holds all the shapes.
+     * @param g Graphics to draw on
+     */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         if (shade != CardModel.Shade.OPEN) {
             drawSquare(g, true);
 
@@ -28,11 +32,14 @@ public class SquareShape extends Shape {
                 shadeStripped(g);
             }
         }
-
         drawSquare(g, false);
-
     }
 
+    /**
+     * Draws a square on a card.
+     * @param g Graphics to draw on
+     * @param filled if shape is solid color or empty
+     */
     private void drawSquare(Graphics g, boolean filled) {
         g.setColor(color);
         int xPoints = (getWidth()/2 - SHAPE_WIDTH/2);
@@ -44,5 +51,4 @@ public class SquareShape extends Shape {
             g.fillRect(xPoints,yPoints, SHAPE_WIDTH, SHAPE_HEIGHT);
         }
     }
-
 }

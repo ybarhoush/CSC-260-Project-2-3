@@ -4,7 +4,7 @@ import model.CardModel;
 
 import java.awt.*;
 /**
- * Circle class.
+ * Creates a circle for a card.
  */
 public class CircleShape extends Shape {
 
@@ -20,7 +20,7 @@ public class CircleShape extends Shape {
     /**
      * Paints the circle based on the shading being
      * set by the card that holds all the shapes.
-     * @param g
+     * @param g Graphics to draw on
      */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -37,7 +37,7 @@ public class CircleShape extends Shape {
 
     /**
      * Draws a circle on a card.
-     * @param g
+     * @param g Graphics to draw on
      * @param filled if shape is solid color or empty
      */
     private void drawCircle(Graphics g, boolean filled) {
