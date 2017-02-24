@@ -16,7 +16,7 @@ public class Editor {
 
     private JFrame frame;
     private static final int FRAME_WIDTH = 700, FRAME_HEIGHT = 700;
-    private static final String MENU_FRAME_TITLE = "The main.Game of Set";
+    private static final String MENU_FRAME_TITLE = "Game of Set";
     private static final String SOLO_FRAME_TITLE = "!!! Solitaire Mode !!!";
     private static final String TUT_FRAME_TITLE = "!!! Tutorial Mode !!!";
 
