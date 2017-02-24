@@ -10,13 +10,10 @@ import commandbars.SolitaireCmdbarView;
 import java.util.List;
 
 /**
- * THis class holds the view and the model togther and allows communication
+ * SolitaireGameController.java
+ * Represents the controls of the game screen of the Solitaire mode.
+ * This class holds the view and the model together and allows communication
  * between the data and what the user sees.
- *
- * This also listens to user input (mouse clicks and if they select cars) then
- * gives that information to the model class and the model deals with it
- * then responds back to the controller which then displays the result back to
- * the player.
  */
 
 public class SolitaireGameController extends SolitaireCmdbarView implements GameViewListener {
@@ -25,6 +22,13 @@ public class SolitaireGameController extends SolitaireCmdbarView implements Game
     protected static GameView gameView;
     protected Editor mainListener;
 
+    /**
+     * Constructor that initializes the game controller of the solitaire mode.
+     *
+     * @param m    GameModel
+     * @param v    GameView
+     * @param main Editor
+     */
     public SolitaireGameController(GameModel m, GameView v, Editor main) {
         super();
         gameModel = m;
@@ -39,6 +43,10 @@ public class SolitaireGameController extends SolitaireCmdbarView implements Game
         gameModel.newGame();
     }
 
+    /**
+     *
+     * @param cardModel
+     */
     public void cardClicked(CardModel cardModel) {
         gameModel.addCardToSelection(cardModel);
 
@@ -55,7 +63,7 @@ public class SolitaireGameController extends SolitaireCmdbarView implements Game
     }
 
     /**
-     * Add three cards to the displayed cards.
+     * Adds three cards to the displayed cards.
      */
     public static void drawThreeCards() {
         if (gameModel.canAddThreeCards()) {
@@ -64,8 +72,7 @@ public class SolitaireGameController extends SolitaireCmdbarView implements Game
     }
 
     /**
-     * If a set exists then this method shows one possible set
-     * that exists amongst the displayed cards.
+     * Shows a hint by highlighting a set if a set exists amongst the displayed cards.
      */
     public static void showHint() {
         List<CardModel> set = gameModel.getOneSet();

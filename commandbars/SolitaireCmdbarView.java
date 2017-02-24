@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  * SolitaireCmdbarView.java
- * Represents Solitaire mode view .
+ * Represents the command bar of the solitaire mode.
  */
 public class SolitaireCmdbarView extends JPanel {
 
@@ -29,7 +29,7 @@ public class SolitaireCmdbarView extends JPanel {
     }
 
     /**
-     * Sets up the buttons and canvas and registers the listeners.
+     * Sets up the buttons and registers the listeners.
      */
     private void iniSolitaireCmdBar() {
 
@@ -44,15 +44,16 @@ public class SolitaireCmdbarView extends JPanel {
     }
 
     /**
+     * Attaches the SolitaireGameController to Listener when Game Controller calls the method.
      *
-     * @param solitaireGameController
+     * @param solitaireGameController Listener to attach.
      */
     public static void attachListener(SolitaireGameController solitaireGameController) {
         SolitaireCmdbarListener = listener;
     }
 
     /**
-     * NameGameButton is pressed.
+     * What to do when NameGameButton is pressed.
      */
     public static class NewGameListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -60,8 +61,9 @@ public class SolitaireCmdbarView extends JPanel {
 
         }
     }
+
     /**
-     * ShowHintButton is pressed.
+     * What to do when ShowHintButton is pressed.
      */
     private class ShowHintListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -70,7 +72,7 @@ public class SolitaireCmdbarView extends JPanel {
     }
 
     /**
-     * AddThreeButton is pressed.
+     * What to do when AddThreeButton is pressed.
      */
     private class AddThreeListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
