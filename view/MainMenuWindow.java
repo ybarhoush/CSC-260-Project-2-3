@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
  */
 public class MainMenuWindow extends JPanel {
 
+    private static final String SET = "Welcome to the Game of Set";
     private static final String Solitaire_BUTTON_LABEL = "Solitaire Mode";
     private static final String TUTORIAL_BUTTON_LABEL = "Tutorial Mode";
     private static final String QUIT_BUTTON_LABEL = "Quit";
@@ -19,6 +20,7 @@ public class MainMenuWindow extends JPanel {
     private JButton tutorial;
     private JButton Solitaire;
     private JButton quit;
+    private JPanel mode;
 
     /**
      * Constructor for creating a new main.Editor Menu.
@@ -32,19 +34,28 @@ public class MainMenuWindow extends JPanel {
     }
 
     private void initGUI() {
-        tutorial = new JButton(TUTORIAL_BUTTON_LABEL);
-        tutorial.setPreferredSize(new Dimension(200, 200));
-        tutorial.addActionListener(new TutorialButtonListener());
-        add(tutorial);
 
+        JLabel set = new JLabel(SET);
+        set.setFont(new Font(getFont().getName(), Font.BOLD, 30));
+        set.setAlignmentX(Component.CENTER_ALIGNMENT);
+        add(set);
+
+        tutorial = new JButton(TUTORIAL_BUTTON_LABEL);
+        tutorial.addActionListener(new TutorialButtonListener());
 
         Solitaire = new JButton(Solitaire_BUTTON_LABEL);
         Solitaire.addActionListener(new SolitaireButtonListener());
-        add(Solitaire);
 
         quit = new JButton(QUIT_BUTTON_LABEL);
         quit.addActionListener(new QuitButtonListener());
-        add(quit);
+
+        mode = new JPanel();
+        mode.setAlignmentX(Component.CENTER_ALIGNMENT);
+        mode.setLayout(new GridLayout(1,3));
+        mode.add(tutorial);
+        mode.add(Solitaire);
+        mode.add(quit);
+        add(mode);
     }
 
     /**
