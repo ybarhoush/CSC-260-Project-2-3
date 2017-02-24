@@ -5,6 +5,7 @@ import model.CardModel;
 import java.awt.*;
 
 /**
+ * ShapeFactory.java
  * Factory class that draws Shape on the card model.
  */
 public class ShapeFactory {

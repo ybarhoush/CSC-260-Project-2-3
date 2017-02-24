@@ -3,8 +3,8 @@ package model;
 import java.awt.*;
 
 /**
- *
- * This class is a card model.
+ * CardModel.java
+ * Represents a card model with three different shapes and shades.
  */
 public class CardModel {
 
@@ -20,6 +20,13 @@ public class CardModel {
     private Color color;        //color of shapes on card
     private boolean isSelected; //if card is selected by player
 
+    /**
+     * Constructor that initializes a card.
+     * @param n ShapeNum
+     * @param s Shape
+     * @param ss Shade
+     * @param c Coloar
+     */
     protected CardModel(int n, Shape s, Shade ss, Color c){
         this.shapeNum = n;
         this.shape = s;

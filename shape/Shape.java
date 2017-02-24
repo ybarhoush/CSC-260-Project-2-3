@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * Shape.java
  * Abstract class that acts a base for all other Shapes.
  */
 public abstract class Shape extends JPanel {

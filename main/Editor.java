@@ -59,7 +59,7 @@ public class Editor {
     /**
      * Constantly repaints the window.
      *
-     * @param pane
+     * @param pane ContentPane
      */
     private void updateContentPane(Container pane) {
         pane.setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
@@ -73,8 +73,8 @@ public class Editor {
      * Based on the screen that this user is in, this method
      * returns the proper title for that frame.
      *
-     * @param mode
-     * @return title
+     * @param mode GameMode
+     * @return title The title of the mode
      */
     private String getFrameTitle(GameMode mode) {
         if (mode == GameMode.Solitaire) {
@@ -100,7 +100,7 @@ public class Editor {
     /**
      * Sets the display to game.
      *
-     * @param mode
+     * @param mode GameMode
      */
     public void goToGame(GameMode mode) {
         if (!(getContentPane() instanceof Game)) {
@@ -116,8 +116,8 @@ public class Editor {
     }
 
     /**
-     * 
-     * @return
+     * private getter method of the frame.
+     * @return ContentPane
      */
     private Container getContentPane() {
         return frame.getContentPane();

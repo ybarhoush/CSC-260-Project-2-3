@@ -5,6 +5,7 @@ import model.CardModel;
 import java.awt.*;
 
 /**
+ * SquareShape.java
  * Subclass the renders a square on the card.
  */
 public class SquareShape extends Shape {
@@ -33,6 +34,11 @@ public class SquareShape extends Shape {
 
     }
 
+    /**
+     * Draws a square.
+     * @param g Graphics
+     * @param filled true if filled / false if not
+     */
     private void drawSquare(Graphics g, boolean filled) {
         g.setColor(color);
         int xPoints = (getWidth()/2 - SHAPE_WIDTH/2);
