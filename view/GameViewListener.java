@@ -1,6 +1,6 @@
-package set.view;
+package view;
 
-import set.model.CardModel;
+import model.CardModel;
 
 /**
  * Interface for GameView.

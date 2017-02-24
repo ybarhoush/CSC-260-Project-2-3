@@ -1,4 +1,4 @@
-package set.model;
+package model;
 import java.util.Observable;
 
 import java.util.ArrayList;

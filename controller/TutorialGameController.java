@@ -1,12 +1,12 @@
-package set.controller;
+package controller;
 
-import set.Editor;
-import set.model.CardModel;
-import set.model.GameModel;
-import set.view.GameView;
-import set.view.GameViewListener;
-import set.commandbars.TutorialCmdbarView;
-import set.view.TutorialSets;
+import Editor;
+import model.CardModel;
+import model.GameModel;
+import view.GameView;
+import view.GameViewListener;
+import commandbars.TutorialCmdbarView;
+import view.TutorialSets;
 
 import java.util.List;
 import java.util.Timer;
