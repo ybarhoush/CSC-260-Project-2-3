@@ -44,8 +44,10 @@ public class SolitaireGameController extends SolitaireCmdbarView implements Game
     }
 
     /**
+     * What to do when the user clicks a card. If three cards are selected, and if
+     * they are a set, then it removes the set and deals three cards.
      *
-     * @param cardModel
+     * @param cardModel the card that the user clicks
      */
     public void cardClicked(CardModel cardModel) {
         gameModel.addCardToSelection(cardModel);
