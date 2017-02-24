@@ -1,6 +1,6 @@
-package set.commandbars;
+package commandbars;
 
-import set.controller.SolitaireGameController;
+import controller.SolitaireGameController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

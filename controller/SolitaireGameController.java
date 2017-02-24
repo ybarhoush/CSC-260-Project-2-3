@@ -1,11 +1,11 @@
-package set.controller;
+package controller;
 
-import set.Editor;
-import set.model.CardModel;
-import set.model.GameModel;
-import set.view.GameView;
-import set.view.GameViewListener;
-import set.commandbars.SolitaireCmdbarView;
+import Editor;
+import model.CardModel;
+import model.GameModel;
+import view.GameView;
+import view.GameViewListener;
+import commandbars.SolitaireCmdbarView;
 
 import java.util.List;
 

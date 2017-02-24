@@ -1,6 +1,6 @@
-package set.shape;
+package shape;
 
-import set.model.CardModel;
+import model.CardModel;
 
 import java.awt.*;
 

@@ -1,12 +1,8 @@
-package set;
-
-import set.controller.SolitaireGameController;
-//import set.controller.SolitaireGameControllerFactory;
-import set.controller.TutorialGameController;
-//import set.controller.TutorialGameControllerFactory;
-import set.model.GameModel;
-import set.view.GameView;
-import set.commandbars.*;
+import controller.SolitaireGameController;
+import controller.TutorialGameController;
+import model.GameModel;
+import view.GameView;
+import commandbars.*;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,6 +1,4 @@
-package set;
-
-import set.view.MainMenuWindow;
+import view.MainMenuWindow;
 
 import javax.swing.*;
 import java.awt.*;
