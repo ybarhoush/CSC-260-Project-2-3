@@ -3,12 +3,17 @@ package view;
 import javax.swing.*;
 
 /**
+ * TutorialSets.java
  * JFrame view to cycle through highlighted sets.
  */
 public class TutorialSets extends JFrame {
 
     private JLabel message;
 
+    /**
+     * Constructor that sends out the message according to the number of sets.
+     * @param n number of sets
+     */
     public TutorialSets(int n){
         setLayout(new BoxLayout(getContentPane() , BoxLayout.Y_AXIS));
         String messageNum;

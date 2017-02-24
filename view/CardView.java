@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * CardView.java
  * View that renders a Set card.
  */
 public class CardView extends JPanel {
@@ -42,6 +43,9 @@ public class CardView extends JPanel {
 
     }
 
+    /**
+     * Adds a shape on a card.
+     */
     private void addShapes() {
         for (int i = 0; i < cardModel.getShapeNum(); i++) {
             Shape shape = ShapeFactory.buildShape(cardModel);
@@ -80,6 +84,9 @@ public class CardView extends JPanel {
         }
     }
 
+    /**
+     * Unhighlights a card.
+     */
     public void unHighlight() {
         setHighlightColor(defaultColor);
         highlight();

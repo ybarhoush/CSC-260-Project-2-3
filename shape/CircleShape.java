@@ -4,12 +4,13 @@ import model.CardModel;
 
 import java.awt.*;
 /**
- * Subclass the renders a circle on the card.
+ * CircleShape.java
+ * Represents a circle on the card.
  */
 public class CircleShape extends Shape {
 
     /**
-     *  Constructor for the CircleShapeView.
+     * Constructor for the CircleShapeView.
      * @param color Color of the circle.
      * @param shade Shade of the circle.
      */
@@ -17,6 +18,10 @@ public class CircleShape extends Shape {
         super(color, shade);
     }
 
+    /**
+     * Paints a circle.
+     * @param g Graphics
+     */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
@@ -30,6 +35,11 @@ public class CircleShape extends Shape {
         drawCircle(g, false);
     }
 
+    /**
+     * Draws a circle.
+     * @param g Graphics
+     * @param filled true if filled / false if not
+     */
     private void drawCircle(Graphics g, boolean filled) {
         g.setColor(color);
 
