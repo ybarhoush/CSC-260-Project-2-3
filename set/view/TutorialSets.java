@@ -12,8 +12,11 @@ import java.util.List;
 /**
  * JFrame view to cycle through highlighted sets.
  */
-public class TutorialSets extends JFrame {
+public class TutorialSets extends JPanel {
+
+    private JFrame frame;
     private JLabel message;
+
     public TutorialSets(int n){
         setLayout(new BoxLayout(getContentPane() , BoxLayout.Y_AXIS));
         String messageNum;
@@ -28,6 +31,15 @@ public class TutorialSets extends JFrame {
         }
         message = new JLabel(messageNum);
         getContentPane().add(message);
-        pack();
+
+
+        frame = new JFrame("Sets");
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setSize(200, 200);
+        frame.pack();
+        frame.setVisible(true);
+
+
+//        pack();
     }
 }

@@ -13,7 +13,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * THis class holds the view and the model togther and allows communication
+ * This class holds the view and the model togther and allows communication
  * between the data and what the user sees.
  */
 
