@@ -1,7 +1,6 @@
-package set.model;
+package model;
 
 import java.util.Collections;
-import java.util.List;
 import java.awt.*;
 import java.util.ArrayList;
 

@@ -1,13 +1,6 @@
-package set.view;
-
-import set.controller.TutorialGameController;
-import set.model.CardModel;
+package view;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.List;
 
 /**
  * JFrame view to cycle through highlighted sets.
@@ -18,7 +11,7 @@ public class TutorialSets extends JPanel {
     private JLabel message;
 
     public TutorialSets(int n){
-        setLayout(new BoxLayout(getContentPane() , BoxLayout.Y_AXIS));
+//        setLayout(new BoxLayout(getContentPane() , BoxLayout.Y_AXIS));
         String messageNum;
         if (n == 0){
             messageNum = "There are no sets in this layout. Please close this window and click next game.";
@@ -30,7 +23,7 @@ public class TutorialSets extends JPanel {
             messageNum = "There are " + n + " sets in the layout. Please watch as we highlight them for you.";
         }
         message = new JLabel(messageNum);
-        getContentPane().add(message);
+//        getContentPane().add(message);
 
 
         frame = new JFrame("Sets");

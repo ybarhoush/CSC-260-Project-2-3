@@ -1,5 +1,5 @@
-package set.view;
-import set.Editor;
+package view;
+import Editor;
 
 import javax.swing.*;
 import java.awt.*;

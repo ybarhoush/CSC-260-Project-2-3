@@ -1,7 +1,7 @@
-package set.view;
+package view;
 
-import set.model.CardModel;
-import set.model.GameModel;
+import model.CardModel;
+import model.GameModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

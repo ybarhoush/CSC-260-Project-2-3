@@ -1,8 +1,8 @@
-package set.view;
+package view;
 
-import set.model.CardModel;
-import set.shape.Shape;
-import set.shape.ShapeFactory;
+import model.CardModel;
+import shape.Shape;
+import shape.ShapeFactory;
 
 import javax.swing.*;
 import javax.swing.border.Border;
