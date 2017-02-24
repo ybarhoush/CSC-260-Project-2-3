@@ -14,7 +14,7 @@ public class SolitaireCmdbarView extends JPanel {
 
     private static JButton addThreeButton = new JButton("Add Three Cards");
     private static JButton showHintButton = new JButton("Hint");
-    private static final String NEW_GAME_LABEL = "New main.Game";
+    private static final String NEW_GAME_LABEL = "New Game";
     protected JButton newGameButton;
     private static Object SolitaireCmdbarListener;
     private static Object listener;
