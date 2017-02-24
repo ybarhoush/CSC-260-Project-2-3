@@ -6,10 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * This Class runs the entire program. This is the starting point, from
- * here the user is displayed the main menu screen and then they can
- * pick the game mode and they will be take there.
- *
+ * Editor.java
+ * Runs the entire program as the starting point by displaying the main menu screen
+ * to the user.
  */
 
 public class Editor {
@@ -21,7 +20,7 @@ public class Editor {
     private static final String TUT_FRAME_TITLE = "!!! Tutorial Mode !!!";
 
     /**
-     * Public enum that represents the different game modes of the Set game.
+     * Represents the different game modes of the Set game.
      * This is passed around the application to indicate the current game mode.
      */
     public enum GameMode {
@@ -30,8 +29,9 @@ public class Editor {
     }
 
     /**
-     * This is where the program starts when you click run.
-     * @param args java arguements
+     * Runs the set game when the application runs.
+     *
+     * @param args java arguments
      */
     public static void main(String[] args) {
         new Editor();
@@ -45,7 +45,7 @@ public class Editor {
     }
 
     /**
-     * Displays the GUI
+     * Displays the GUI.
      */
     private void displayGUI() {
         frame = new JFrame(MENU_FRAME_TITLE);
@@ -57,7 +57,8 @@ public class Editor {
     }
 
     /**
-     * Constanly repaints the window.
+     * Constantly repaints the window.
+     *
      * @param pane
      */
     private void updateContentPane(Container pane) {
@@ -69,8 +70,9 @@ public class Editor {
     }
 
     /**
-     * Based on teh screen that this user is in, this method
+     * Based on the screen that this user is in, this method
      * returns the proper title for that frame.
+     *
      * @param mode
      * @return title
      */
@@ -97,6 +99,7 @@ public class Editor {
 
     /**
      * Sets the display to game.
+     *
      * @param mode
      */
     public void goToGame(GameMode mode) {
@@ -111,6 +114,11 @@ public class Editor {
             }
         }
     }
+
+    /**
+     * 
+     * @return
+     */
     private Container getContentPane() {
         return frame.getContentPane();
     }
