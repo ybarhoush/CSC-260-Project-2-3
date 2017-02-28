@@ -3,7 +3,6 @@ package view;
 import model.CardModel;
 
 /**
- * GameView.java
  * Interface for GameView.
  */
 public interface GameViewListener {

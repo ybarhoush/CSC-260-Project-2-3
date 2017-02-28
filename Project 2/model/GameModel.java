@@ -1,15 +1,15 @@
 package model;
-
 import java.util.Observable;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * GameModel.java
- * Represents the actual game as a fluent interface for GameModel
+ * GameModel is the backbone of the game. Using the observer pattern
+ * the gameModel is able to see how the gameView changes (user input)
+ * and reacts appropriately with proper methods.
  */
-public class GameModel extends Observable {
+public class GameModel extends Observable{
 
     public static int SET_NUM = 3;
     public static int Cards_ON_TABLE = 12;
@@ -21,7 +21,8 @@ public class GameModel extends Observable {
     private boolean isPlaying;
 
     /**
-     * Constructor that creates new GameModel.
+     * This creates a new GameModel that holds the cards displayed
+     * and the cards that the user selects.
      */
     public GameModel() {
         this.cardsOnTable = new ArrayList<>(MAX_CARDS_ON_TABLE);
@@ -29,7 +30,9 @@ public class GameModel extends Observable {
     }
 
     /**
-     * Creates a new game.
+     * Creates a new Game by making a fresh deck, clearing any
+     * previously displayed and selected cards. Next it shuffles
+     * the deck then deals 12 cards to the player.
      */
     public void newGame() {
         this.deck = new DeckModel();
@@ -43,7 +46,8 @@ public class GameModel extends Observable {
     }
 
     /**
-     * Deals 12 cards on the table when the game first starts.
+     * This methods deals 12 cards on the table
+     * when the game first starts.
      */
     private void dealTwelve() {
         for (int i = 0; i < Cards_ON_TABLE; i++) {
@@ -54,7 +58,8 @@ public class GameModel extends Observable {
     }
 
     /**
-     * Removes a set of cards.
+     * If the three cards that the user selects are a set,
+     * this method removes those cards.
      */
     public void removeSet() {
         for (CardModel selectedCard : selectedCards) {
@@ -66,21 +71,21 @@ public class GameModel extends Observable {
     }
 
     /**
-     * True iff the cards on the table do not exceed the maximum number of cards
-     * to be served on the table and the deck has at least three cards left in it.
-     *
-     * @return true or false
+     * Checks to see if there are less than 15 cards on the table
+     * and that at least 3 cards exist in the deck.
+     * @return true iff <15 cards on table && deck has >3 cards
      */
     public boolean canAddThreeCards() {
         if ((cardsOnTable.size() <= Cards_ON_TABLE) && (deck.hasThreeCards())) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     /**
-     * Adds three cards.
+     * Adds three cards to the table when requested by player and
+     * there are less then 15 cards on the table, or when a set
+     * has been removed and there are 9 cards on the table.
      */
     public void addThreeCards() {
         for (int i = 0; i <= 2; i++) {
@@ -91,25 +96,23 @@ public class GameModel extends Observable {
     }
 
     /**
-     * Checks if the selected cards are a set.
-     *
-     * @return true or false
+     * Checks to see if the 3 cards selected by the player are a set.
+     * @return true iff the three selected cards are a set
      */
     public boolean isSet() {
         if (threeCardsSelected()) {
             return (checkSet(selectedCards.get(0), selectedCards.get(1), selectedCards.get(2)));
-        } else {
-            return false;
         }
+        return false;
     }
 
     /**
-     * Checks if the selected cards are a set.
-     *
-     * @param one   the first card
-     * @param two   the second card
-     * @param three the third card
-     * @return true or false
+     * Helper method that checks all attributes of three cards against each other
+     * to determine if they can be declared as a set.
+     * @param one cardModel
+     * @param two cardModel
+     * @param three cardModel
+     * @return true iff the 3 given cards are a set
      */
     public boolean checkSet(CardModel one, CardModel two, CardModel three) {
         return (checkColor(one, two, three) && checkShape(one, two, three)
@@ -117,28 +120,28 @@ public class GameModel extends Observable {
     }
 
     /**
-     * Checks if three cards are selected.
-     *
-     * @return true or false
+     * Checks to see if the player has selected three cards.
+     * @return true iff 3 cards are selected
      */
     public boolean threeCardsSelected() {
         return selectedCards.size() == SET_NUM;
     }
 
     /**
-     * Public getter methods.
+     * Returns the cards that are currently displayed to the player
+     * @return list of cards
      */
     public List<CardModel> getCardsOnTable() {
         return this.cardsOnTable;
     }
 
-    public List<CardModel> getSelectedCards() {
+    /**
+     * Returns the cards that the user has currently selected.
+     * @return list of cards
+     */
+    public List <CardModel> getSelectedCards() {
         return this.selectedCards;
     }
-
-    /**
-     * Clears the selected cards and reverts to unselected state.
-     */
     public void clearSelectedCards() {
         for (CardModel selectedCard : selectedCards) {
             selectedCard.unSelect();
@@ -149,15 +152,12 @@ public class GameModel extends Observable {
     }
 
     /**
-     * Adds cards to the user's selection
-     *
-     * @param c Card selected
+     * Adds card to list of cards that the user has selected.
+     * @param c cardModel
      */
     public void addCardToSelection(CardModel c) {
         if (!selectedCards.contains(c)) {
-
             selectedCards.add(c);
-
         } else {
             selectedCards.remove(c);
         }
@@ -167,11 +167,11 @@ public class GameModel extends Observable {
     }
 
     /**
-     * Checks is there is a set among the selected cards and returns a set if it exists.
-     *
-     * @return addSet the set
+     * Returns one possible set out of all the cards being currently
+     * displayed to the user.
+     * @return list of cards
      */
-    public List<CardModel> getOneSet() {
+    public List <CardModel> getOneSet() {
         List<CardModel> addSet = new ArrayList<>();
         for (int i = 0; i < this.cardsOnTable.size(); i++) {                  // start at the first index
             for (int j = (i + 1); j < this.cardsOnTable.size(); j++) {        // start at the second index
@@ -196,11 +196,11 @@ public class GameModel extends Observable {
     }
 
     /**
-     * Returns all the sets in the displayed cards.
-     *
-     * @return all the sets
+     * Returns all the possible sets out of all the cards being currently
+     * displayed to the user.
+     * @return List of lists of cards
      */
-    public List<List<CardModel>> getAllSets() {
+    public List <List <CardModel>> getAllSets() {
         List<List<CardModel>> allSets = new ArrayList<>();
         for (int i = 0; i < this.cardsOnTable.size(); i++) {                  // start at the first index
             for (int j = (i + 1); j < this.cardsOnTable.size(); j++) {        // start at the second index
@@ -224,14 +224,12 @@ public class GameModel extends Observable {
         }
         return allSets;
     }
-
     /**
-     * Checks whether the three cards selected have the same colors.
-     *
-     * @param a card
-     * @param b card
-     * @param c card
-     * @return true if all the same or all different
+     * Check whether one individual feature of three given cards is the same or all different.
+     * @param a card1
+     * @param b card2
+     * @param c card3
+     * @return true iff the feature is the same amongst all three cards or all different.
      */
     private boolean checkColor(CardModel a, CardModel b, CardModel c) {
         return ((a.getColor() == b.getColor() &&
@@ -242,14 +240,6 @@ public class GameModel extends Observable {
                 a.getColor() != c.getColor()));
     }
 
-    /**
-     * Checks whether the three cards selected have the same shapes.
-     *
-     * @param a card
-     * @param b card
-     * @param c card
-     * @return true if all the same or all different
-     */
     private boolean checkShape(CardModel a, CardModel b, CardModel c) {
         return ((a.getShape() == b.getShape() &&
                 b.getShape() == c.getShape() &&
@@ -259,15 +249,6 @@ public class GameModel extends Observable {
                 a.getShape() != c.getShape());
     }
 
-
-    /**
-     * Checks whether the three cards selected have the same shades.
-     *
-     * @param a card
-     * @param b card
-     * @param c card
-     * @return true if all the same or all different
-     */
     private boolean checkShade(CardModel a, CardModel b, CardModel c) {
         return ((a.getShade() == b.getShade() &&
                 b.getShade() == c.getShade() &&
@@ -277,15 +258,6 @@ public class GameModel extends Observable {
                 a.getShade() != c.getShade());
     }
 
-
-    /**
-     * Checks whether the three cards selected have the same number of shapes.
-     *
-     * @param a card
-     * @param b card
-     * @param c card
-     * @return true if all the same or all different
-     */
     private boolean checkNum(CardModel a, CardModel b, CardModel c) {
         return ((a.getShapeNum() == b.getShapeNum() &&
                 b.getShapeNum() == c.getShapeNum() &&

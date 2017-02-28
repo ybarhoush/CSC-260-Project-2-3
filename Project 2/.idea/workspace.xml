@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e203204a-a66b-4cac-9d7c-d8699621feaa" name="Default" comment="" />
+    <list default="true" id="5ed971ef-b963-4218-b032-40d9ee0c3b86" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,8 +45,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -75,7 +75,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,17 +495,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e203204a-a66b-4cac-9d7c-d8699621feaa" name="Default" comment="" />
-      <created>1488246923190</created>
+      <changelist id="5ed971ef-b963-4218-b032-40d9ee0c3b86" name="Default" comment="" />
+      <created>1488247328708</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1488246923190</updated>
-      <workItem from="1488246924462" duration="21000" />
+      <updated>1488247328708</updated>
+      <workItem from="1488247329983" duration="16000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21000" />
+    <option name="totallyTimeSpent" value="16000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="956" extended-state="6" />

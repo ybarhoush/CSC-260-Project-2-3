@@ -7,11 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * MainMenuWindow.java
- * JPanel class that represents the main.Editor Menu of the game.
+ * This is the first window that the player will see when running the game.
+ * From here the player is able to enter a game mode.
  */
 public class MainMenuWindow extends JPanel {
 
+    private static final String SET = "Welcome to the Game of Set";
     private static final String Solitaire_BUTTON_LABEL = "Solitaire Mode";
     private static final String TUTORIAL_BUTTON_LABEL = "Tutorial Mode";
     private static final String QUIT_BUTTON_LABEL = "Quit";
@@ -20,11 +21,11 @@ public class MainMenuWindow extends JPanel {
     private JButton tutorial;
     private JButton Solitaire;
     private JButton quit;
+    private JPanel mode;
 
     /**
      * Constructor for creating a new main.Editor Menu.
-     *
-     * @param mainListener Listener callbacks for the main.Editor Japplet.
+     * @param mainListener Listener callbacks for the main.Editor.
      */
     public MainMenuWindow(Editor mainListener) {
         this.mainListener = mainListener;
@@ -32,24 +33,36 @@ public class MainMenuWindow extends JPanel {
         initGUI();
     }
 
+    /**
+     * Initializes the GUI
+     */
     private void initGUI() {
-        tutorial = new JButton(TUTORIAL_BUTTON_LABEL);
-        tutorial.setPreferredSize(new Dimension(200, 200));
-        tutorial.addActionListener(new TutorialButtonListener());
-        add(tutorial);
 
+        JLabel set = new JLabel(SET);
+        set.setFont(new Font(getFont().getName(), Font.BOLD, 30));
+        set.setAlignmentX(Component.CENTER_ALIGNMENT);
+        add(set);
+
+        tutorial = new JButton(TUTORIAL_BUTTON_LABEL);
+        tutorial.addActionListener(new TutorialButtonListener());
 
         Solitaire = new JButton(Solitaire_BUTTON_LABEL);
         Solitaire.addActionListener(new SolitaireButtonListener());
-        add(Solitaire);
 
         quit = new JButton(QUIT_BUTTON_LABEL);
         quit.addActionListener(new QuitButtonListener());
-        add(quit);
+
+        mode = new JPanel();
+        mode.setAlignmentX(Component.CENTER_ALIGNMENT);
+        mode.setLayout(new GridLayout(1,3));
+        mode.add(tutorial);
+        mode.add(Solitaire);
+        mode.add(quit);
+        add(mode);
     }
 
     /**
-     * What to do when Solitaire button is pressed.
+     * Solitaire button is pressed.
      */
     private class SolitaireButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -58,7 +71,7 @@ public class MainMenuWindow extends JPanel {
     }
 
     /**
-     * What to do when Tutorial button is pressed.
+     * Tutorial button is pressed.
      */
     private class TutorialButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -67,7 +80,7 @@ public class MainMenuWindow extends JPanel {
     }
 
     /**
-     * What to do when Quit button is pressed.
+     * Quit button is pressed.
      */
     private class QuitButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
