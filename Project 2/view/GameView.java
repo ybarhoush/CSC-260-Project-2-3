@@ -12,8 +12,8 @@ import java.util.*;
 import java.util.List;
 
 /**
- * GameView.java
- * View class that renders the game board and the current 12/15 active cards.
+ * This class is what the player will see in terms of the cards
+ * being displayed and what they are able to select.
  */
 public class GameView extends JPanel implements Observer {
 
@@ -29,9 +29,8 @@ public class GameView extends JPanel implements Observer {
     private boolean attachListeners;
 
     /**
-     * Constructor for creating a new game view.
-     *
-     * @param gameModel GameModel to initialize from.
+     * Creates a new GameView
+     * @param gameModel GameModel to initialize from
      */
     public GameView(GameModel gameModel) {
         super();
@@ -46,23 +45,19 @@ public class GameView extends JPanel implements Observer {
     }
 
     /**
-     * Updates the cards on the screen.
-     * @param cardModels Card
+     * Updates the cards being displayed to the player.
+     * @param cardModels
      */
     private void updateCardViews(List<CardModel> cardModels) {
         removeAll();
         revalidate();
-
         cardViewMap.clear();
-
         for (CardModel cardModel : cardModels) {
             CardView cardView = new CardView(cardModel);
             cardViewMap.put(cardModel, cardView);
-
             attachClickListeners(cardView);
             add(cardView);
         }
-
         int size = cardModels.size();
         if (size < GameModel.MAX_CARDS_ON_TABLE) {
             for (int i = 0; i < GameModel.MAX_CARDS_ON_TABLE - size; i++) {
@@ -71,6 +66,11 @@ public class GameView extends JPanel implements Observer {
         }
     }
 
+    /**
+     * Listens to the clicks of the player to see if a card
+     * is selected.
+     * @param view
+     */
     private void attachClickListeners(CardView view) {
         if (attachListeners) {
             view.addMouseListener(new CardClickHandler());
@@ -78,9 +78,8 @@ public class GameView extends JPanel implements Observer {
     }
 
     /**
-     * Attaches the game controller to the current GameView
-     *
-     * @param controller main.Game controller to attach.
+     * Attaches the proper controller to the gameView
+     * @param controller controller to attach.
      */
     public void attachListener(GameViewListener controller) {
         this.controller = controller;
@@ -90,7 +89,6 @@ public class GameView extends JPanel implements Observer {
     /**
      * Called automatically when the parent Observer object notifies its
      * observers.
-     *
      * @param o Observable object
      * @param arg Arguments from the observable.
      */
@@ -99,26 +97,22 @@ public class GameView extends JPanel implements Observer {
     }
 
     /**
-     * Highlights each individual set with a new random color.
-     *
-     * @param set Single set.
+     * Highlights one set of cards with the orange color.
+     * @param set set.
      */
     public void highlightOneSet(List<CardModel> set) {
         unhighlightAllCards();
-
         Color color = Color.orange;
-
         for (int j = 0; j < GameModel.SET_NUM; j++) {
             CardModel model = set.get(j);
             CardView view = cardViewMap.get(model);
-
             view.setHighlightColor(color);
             view.highlight();
         }
     }
 
     /**
-     * Unhighlight all cards.
+     * Unhighlights a set of cards.
      */
     private void unhighlightAllCards() {
         for (CardView cardView : cardViewMap.values()) {
@@ -127,7 +121,7 @@ public class GameView extends JPanel implements Observer {
     }
 
     /**
-     * Called when a CardView is clicked.
+     * Called when a card is clicked on.
      */
     private class CardClickHandler extends MouseAdapter {
         public void mousePressed(MouseEvent e) {

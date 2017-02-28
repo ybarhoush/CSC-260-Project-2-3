@@ -15,7 +15,7 @@ public class Editor {
 
     private JFrame frame;
     private static final int FRAME_WIDTH = 700, FRAME_HEIGHT = 700;
-    private static final String MENU_FRAME_TITLE = "The main.Game of Set";
+    private static final String MENU_FRAME_TITLE = "Game of Set";
     private static final String SOLO_FRAME_TITLE = "!!! Solitaire Mode !!!";
     private static final String TUT_FRAME_TITLE = "!!! Tutorial Mode !!!";
 
@@ -59,7 +59,7 @@ public class Editor {
     /**
      * Constantly repaints the window.
      *
-     * @param pane ContentPane
+     * @param pane
      */
     private void updateContentPane(Container pane) {
         pane.setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
@@ -73,8 +73,8 @@ public class Editor {
      * Based on the screen that this user is in, this method
      * returns the proper title for that frame.
      *
-     * @param mode GameMode
-     * @return title The title of the mode
+     * @param mode
+     * @return title
      */
     private String getFrameTitle(GameMode mode) {
         if (mode == GameMode.Solitaire) {
@@ -100,7 +100,7 @@ public class Editor {
     /**
      * Sets the display to game.
      *
-     * @param mode GameMode
+     * @param mode
      */
     public void goToGame(GameMode mode) {
         if (!(getContentPane() instanceof Game)) {
@@ -116,8 +116,8 @@ public class Editor {
     }
 
     /**
-     * private getter method of the frame.
-     * @return ContentPane
+     * Retrieves the content pane layer so that you can add an object to it.
+     * @return content pane
      */
     private Container getContentPane() {
         return frame.getContentPane();
