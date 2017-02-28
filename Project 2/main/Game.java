@@ -10,8 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Game.java
- * "ViewController" that acts as the glue between the main.Game Model, View, and
+ * ViewController that allows communcation between the GameModel, View, and
  * Controller.
  */
 public class Game extends JPanel {
@@ -24,11 +23,10 @@ public class Game extends JPanel {
     private final Editor.GameMode gameMode;
 
     /**
-     * Constructor for creating a new main.Game object. The mode depends on
-     * what the user chooses.
+     * Constructor for creating a new main.Game object.
      *
-     * @param main main.Editor object
-     * @param mode main.Game mode of game type to create
+     * @param main main.Editor object.
+     * @param mode main.Game mode of game type to create.
      */
     public Game(Editor main, Editor.GameMode mode) {
         super();

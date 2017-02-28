@@ -26,6 +26,12 @@ public class TutorialGameController extends TutorialCmdbarView implements GameVi
     protected static GameView gameView;
     protected Editor mainListener;
 
+    /**
+     * Constructor that initializes the game controller of the tutorial mode.
+     * @param m GameModel
+     * @param v GameView
+     * @param main  Editor
+     */
     public TutorialGameController(GameModel m, GameView v, Editor main) {
         super();
         gameModel = m;
