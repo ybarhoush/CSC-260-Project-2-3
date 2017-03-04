@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  * MemoryCmdbarView.java
- * Represents the command bar of the solitaire mode.
+ * Represents the command bar of the Memory Game.
  */
 public class MemoryCmdbarView extends JPanel {
 
