@@ -59,8 +59,8 @@ public class GameView extends JPanel implements Observer {
             add(cardView);
         }
         int size = cardModels.size();
-        if (size < GameModel.MAX_CARDS_ON_TABLE) {
-            for (int i = 0; i < GameModel.MAX_CARDS_ON_TABLE - size; i++) {
+        if (size < GameModel.CARDS_ON_TABLE) {
+            for (int i = 0; i < GameModel.CARDS_ON_TABLE - size; i++) {
                 add(Box.createGlue());
             }
         }

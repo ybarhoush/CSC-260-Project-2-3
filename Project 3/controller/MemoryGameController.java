@@ -49,7 +49,7 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
     public void cardClicked(CardModel cardModel) {
         gameModel.addCardToSelection(cardModel);
 
-        if (gameModel.twoCardsSelected())
+        if (gameModel.twoCardsSelected()) {
             if (gameModel.isPair()) {
                 //--implement >> Highlight Color Green
                 //--prevent user from selecting more cards!!
@@ -60,7 +60,8 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
 //                if (gameModel.getCardsOnTable().size() < GameModel.Cards_ON_TABLE) {
 //                    gameModel.addThreeCards();
 //                }
-            } else {
+            }
+        }else {
                 //--implement >> Highlight Color Red
                 gameModel.clearSelectedCards();
             }
