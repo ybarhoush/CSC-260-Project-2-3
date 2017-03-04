@@ -28,9 +28,9 @@ public class SquareShape extends Shape {
         if (shade != CardModel.Shade.OPEN) {
             drawSquare(g, true);
 
-            if (shade == CardModel.Shade.STRIPED) {
-                shadeStripped(g);
-            }
+//            if (shade == CardModel.Shade.STRIPED) {
+//                shadeStripped(g);
+//            }
         }
         drawSquare(g, false);
     }
