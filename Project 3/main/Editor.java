@@ -50,7 +50,7 @@ public class Editor {
     private void displayGUI() {
         frame = new JFrame(MENU_FRAME_TITLE);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+//        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         goToUserID();
 //        goToMainMenu();
         frame.pack();
@@ -90,21 +90,23 @@ public class Editor {
     public void goToUserID(){
         if (!(getContentPane() instanceof MainMenuWindow)) {
             UserID userID = new UserID(this);
+//            Test t1 = new Test(this);
             frame.setTitle(USER_ID_TITLE);
             updateContentPane(userID);
+//            updateContentPane(t1);
         }
     }
 
     /**
      * Sets the display to MainMenu screen.
-     */
-    public void goToMainMenu() {
-        if (!(getContentPane() instanceof MainMenuWindow)) {
-            MainMenuWindow mainMenu = new MainMenuWindow(this);
-            frame.setTitle(MENU_FRAME_TITLE);
-            updateContentPane(mainMenu);
-        }
-    }
+//     */
+//    public void goToMainMenu() {
+//        if (!(getContentPane() instanceof MainMenuWindow)) {
+//            MainMenuWindow mainMenu = new MainMenuWindow(this);
+//            frame.setTitle(MENU_FRAME_TITLE);
+//            updateContentPane(mainMenu);
+//        }
+//    }
 
     /**
      * Sets the display to game.
