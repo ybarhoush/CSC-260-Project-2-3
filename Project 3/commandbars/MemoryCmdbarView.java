@@ -11,10 +11,10 @@ import java.awt.event.ActionListener;
  * Represents the command bar of the Memory Game.
  */
 public class MemoryCmdbarView extends JPanel {
+    private static final String NEW_GAME_LABEL = "New Game";
 
     private static JButton removePairButton = new JButton("Remove Pair");
     private static JButton turnOverCardsButton = new JButton("Turn Over Cards");
-    private static final String NEW_GAME_LABEL = "New Game";
     protected JButton newGameButton;
     private static Object MemoryCmdbarListener;
     private static Object listener;

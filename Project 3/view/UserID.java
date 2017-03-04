@@ -4,20 +4,22 @@ import main.Editor;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by David on 3/3/17.
  */
 public class UserID extends JPanel{
     private static final String ENTER_BUTTON = "Enter";
-    private static final String USER_ID = "Enter Your Three Digit User ID:";
+    private static final String USER_ID = "Enter Your Three Letter User ID:";
 
     private Editor mainListener;
     private JPanel p1;
     private JLabel image1;
     private JLabel image2;
     private JTextField threeDigitID;
-    private JButton buttonOne;
+    private JButton enter;
     private JLabel id;
 
 
@@ -44,9 +46,10 @@ public class UserID extends JPanel{
         );
         p1.add(p2);
 
-        buttonOne = new JButton(ENTER_BUTTON);
-        setCenterAlignment(buttonOne);
-        p1.add(buttonOne);
+        enter = new JButton(ENTER_BUTTON);
+        setCenterAlignment(enter);
+        enter.addActionListener(new EnterButtonListener());
+        p1.add(enter);
 
         image2 = new JLabel(new ImageIcon("memory_game.jpg"));
         setCenterAlignment(image2);
@@ -57,5 +60,15 @@ public class UserID extends JPanel{
     private void setCenterAlignment(JComponent component) {
         component.setAlignmentX(Component.CENTER_ALIGNMENT);
         component.setAlignmentY(Component.CENTER_ALIGNMENT);
+    }
+
+    /**
+     * Quit button is pressed.
+     */
+    private class EnterButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            //record data
+            mainListener.goToGame(Editor.GameMode.Memory);
+        }
     }
 }
