@@ -42,17 +42,6 @@ public abstract class Shape extends JPanel {
         g.setColor(color);
     }
 
-    /**
-     * Draws horizontal lines on the card to
-     * indicate a form of shading.
-     * @param g Graphics to draw on.
-     */
-    protected void shadeStripped(Graphics g) {
-        g.setColor(highlightColor);
-        for (int i = 0; i < getWidth(); i+= BAR_GAP){
-            g.drawLine(getWidth(), i, 0, i);
-        }
-    }
 
     /**
      * Sets the highlight color of the shading.

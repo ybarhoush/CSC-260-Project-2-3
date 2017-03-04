@@ -27,10 +27,6 @@ public class SquareShape extends Shape {
         super.paintComponent(g);
         if (shade != CardModel.Shade.OPEN) {
             drawSquare(g, true);
-
-//            if (shade == CardModel.Shade.STRIPED) {
-//                shadeStripped(g);
-//            }
         }
         drawSquare(g, false);
     }

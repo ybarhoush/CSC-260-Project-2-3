@@ -5,7 +5,9 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
 /**
- * Created by David on 3/4/17.
+ * This class is what times the user id to 3 letters.
+ * This class doesn't allow the user to enter an id that
+ *  is longer than 3 characters.
  */
 public class JTextFieldLimitThreeChars extends PlainDocument {
     private final int THREE_CHARS = 3;
