@@ -1,6 +1,7 @@
 package main;
 
 import view.MainMenuWindow;
+import view.UserID;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,16 +16,15 @@ public class Editor {
 
     private JFrame frame;
     private static final int FRAME_WIDTH = 700, FRAME_HEIGHT = 700;
+    private static final String USER_ID_TITLE = "User ID";
     private static final String MENU_FRAME_TITLE = "Game of Set";
     private static final String MEMORY_FRAME_TITLE = "Memory Mode";
-//    private static final String TUT_FRAME_TITLE = "!!! Tutorial Mode !!!";
 
     /**
      * Represents the different game modes of the Set game.
      * This is passed around the application to indicate the current game mode.
      */
     public enum GameMode {
-//        TUTORIAL,
         Memory,
     }
 
@@ -51,7 +51,8 @@ public class Editor {
         frame = new JFrame(MENU_FRAME_TITLE);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-        goToMainMenu();
+        goToUserID();
+//        goToMainMenu();
         frame.pack();
         frame.setVisible(true);
     }
@@ -83,6 +84,14 @@ public class Editor {
 //            return TUT_FRAME_TITLE;
         } else {
             return MENU_FRAME_TITLE;
+        }
+    }
+
+    public void goToUserID(){
+        if (!(getContentPane() instanceof MainMenuWindow)) {
+            UserID userID = new UserID(this);
+            frame.setTitle(USER_ID_TITLE);
+            updateContentPane(userID);
         }
     }
 
