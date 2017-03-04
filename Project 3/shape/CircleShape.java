@@ -27,10 +27,6 @@ public class CircleShape extends Shape {
 
         if (shade != CardModel.Shade.OPEN) {
             drawCircle(g, true);
-
-//            if (shade == CardModel.Shade.STRIPED) {
-//                shadeStripped(g);
-//            }
         }
         drawCircle(g, false);
     }

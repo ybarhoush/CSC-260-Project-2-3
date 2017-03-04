@@ -12,8 +12,7 @@ import java.util.List;
 public class GameModel extends Observable{
 
     public static int PAIR_NUM = 2;
-    public static int Cards_ON_TABLE = 72;
-    public static int MAX_CARDS_ON_TABLE = 72;
+    public static int CARDS_ON_TABLE = 72;
 
     private DeckModel deck;
     private List<CardModel> cardsOnTable;
@@ -25,7 +24,7 @@ public class GameModel extends Observable{
      * and the cards that the user selects.
      */
     public GameModel() {
-        this.cardsOnTable = new ArrayList<>(MAX_CARDS_ON_TABLE);
+        this.cardsOnTable = new ArrayList<>(CARDS_ON_TABLE);
         this.selectedCards = new ArrayList<>(PAIR_NUM);
     }
 
@@ -50,7 +49,7 @@ public class GameModel extends Observable{
      * when the game first starts.
      */
     private void dealSeventyTwo() {
-        for (int i = 0; i < Cards_ON_TABLE; i++) {
+        for (int i = 0; i < CARDS_ON_TABLE; i++) {
             cardsOnTable.add(this.deck.dealOne());
         }
         setChanged();
@@ -76,7 +75,7 @@ public class GameModel extends Observable{
      */
     public boolean isPair() {
         if (twoCardsSelected()) {
-            return (checkPair(selectedCards.get(0), selectedCards.get(1)));
+            return (isPair(selectedCards.get(0), selectedCards.get(1)));
         }
         return false;
     }
@@ -88,7 +87,7 @@ public class GameModel extends Observable{
      * @param two cardModel
      * @return true iff the 2 given cards are a pair
      */
-    public boolean checkPair(CardModel one, CardModel two) {
+    public boolean isPair(CardModel one, CardModel two) {
         return (checkColor(one, two) && checkShape(one, two)
                 && checkShade(one, two) && checkNum(one, two));
     }
@@ -97,22 +96,19 @@ public class GameModel extends Observable{
      * Check whether one individual feature of two given cards is the same
      * @param a card1
      * @param b card2
-     * @return true iff the feature is the same amongst all two cards
+     * @return true iff the feature is the same amongst both cards
      */
-    private boolean checkColor(CardModel a, CardModel b) {
-        return ((a.getColor() == b.getColor()));
+    private boolean checkColor(CardModel a, CardModel b){
+        return (a.getColor() == b.getColor());
     }
-
-    private boolean checkShape(CardModel a, CardModel b) {
-        return ((a.getShape() == b.getShape()));
+    private boolean checkShape(CardModel a, CardModel b){
+        return (a.getShape() == b.getShape());
     }
-
-    private boolean checkShade(CardModel a, CardModel b) {
-        return ((a.getShade() == b.getShade()));
+    private boolean checkShade(CardModel a, CardModel b){
+        return (a.getShade() == b.getShade());
     }
-
-    private boolean checkNum(CardModel a, CardModel b) {
-        return ((a.getShapeNum() == b.getShapeNum()));
+    private boolean checkNum(CardModel a, CardModel b){
+        return (a.getShapeNum() == b.getShapeNum());
     }
 
     /**
