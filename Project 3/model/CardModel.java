@@ -9,7 +9,7 @@ import java.awt.*;
 public class CardModel {
 
     /** All the shades that can be displayed on a card */
-    public enum Shade {SOLID, STRIPED, OPEN}
+    public enum Shade {SOLID, OPEN}
 
     /** All the shapes that can be displayed on a card */
     public enum Shape {DIAMOND, CIRCLE, SQUARE}

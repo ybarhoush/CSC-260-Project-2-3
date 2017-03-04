@@ -27,9 +27,9 @@ public class DiamondShape extends Shape {
         super.paintComponent(g);
         if (shade != CardModel.Shade.OPEN) {
             drawDiamond(g, true);
-            if (shade == CardModel.Shade.STRIPED) {
-                shadeStripped(g);
-            }
+//            if (shade == CardModel.Shade.STRIPED) {
+//                shadeStripped(g);
+//            }
         }
         drawDiamond(g, false);
 

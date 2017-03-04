@@ -1,6 +1,5 @@
 package main;
 
-import view.MainMenuWindow;
 import view.UserID;
 
 import javax.swing.*;
@@ -17,7 +16,7 @@ public class Editor {
     private JFrame frame;
     private static final int FRAME_WIDTH = 700, FRAME_HEIGHT = 700;
     private static final String USER_ID_TITLE = "User ID";
-    private static final String MENU_FRAME_TITLE = "Game of Set";
+//    private static final String MENU_FRAME_TITLE = "Game of Set";
     private static final String MEMORY_FRAME_TITLE = "Memory Mode";
 
     /**
@@ -48,11 +47,10 @@ public class Editor {
      * Displays the GUI.
      */
     private void displayGUI() {
-        frame = new JFrame(MENU_FRAME_TITLE);
+        frame = new JFrame(USER_ID_TITLE);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 //        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         goToUserID();
-//        goToMainMenu();
         frame.pack();
         frame.setVisible(true);
     }
@@ -78,35 +76,20 @@ public class Editor {
      * @return title
      */
     private String getFrameTitle(GameMode mode) {
-        if (mode == GameMode.Memory) {
+//        if (mode == GameMode.Memory) {
             return MEMORY_FRAME_TITLE;
-//        } else if (mode == GameMode.TUTORIAL) {
-//            return TUT_FRAME_TITLE;
-        } else {
-            return MENU_FRAME_TITLE;
-        }
+//        }
+//        return MENU_FRAME_TITLE;
     }
 
     public void goToUserID(){
-        if (!(getContentPane() instanceof MainMenuWindow)) {
+        if (!(getContentPane() instanceof UserID)) {
             UserID userID = new UserID(this);
-//            Test t1 = new Test(this);
             frame.setTitle(USER_ID_TITLE);
             updateContentPane(userID);
-//            updateContentPane(t1);
         }
     }
 
-    /**
-     * Sets the display to MainMenu screen.
-//     */
-//    public void goToMainMenu() {
-//        if (!(getContentPane() instanceof MainMenuWindow)) {
-//            MainMenuWindow mainMenu = new MainMenuWindow(this);
-//            frame.setTitle(MENU_FRAME_TITLE);
-//            updateContentPane(mainMenu);
-//        }
-//    }
 
     /**
      * Sets the display to game.
@@ -118,11 +101,7 @@ public class Editor {
             Game game = new Game(this, mode);
             frame.setTitle(getFrameTitle(mode));
             updateContentPane(game);
-//            if (mode == Editor.GameMode.TUTORIAL) {
-//                game.newTutorialGame();
-//            } else {
-                game.newMemoryGame();
-//            }
+            game.newMemoryGame();
         }
     }
 
