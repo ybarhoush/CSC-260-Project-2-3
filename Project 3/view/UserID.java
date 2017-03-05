@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class UserID extends JPanel{
     private static final String ENTER_BUTTON = "Enter";
     private static final String USER_ID = "Enter Your Three Letter User ID:";
-    private static final String ALL_PLAYERS = "Players/AllPlayers.txt";
+    private static final String ALL_PLAYERS = "AllPlayers.txt";
 
     private Editor mainListener;
     private JPanel p1;
@@ -39,7 +39,7 @@ public class UserID extends JPanel{
         p1.setLayout(new BoxLayout(p1, BoxLayout.PAGE_AXIS));
 
         // top image
-        image1 = new JLabel(new ImageIcon("memory-challenge.png"));
+        image1 = new JLabel(new ImageIcon("Images/memory-challenge.png"));
         setCenterAlignment(image1);
         p1.add(image1);
 
@@ -63,7 +63,7 @@ public class UserID extends JPanel{
         p1.add(enter);
 
         //bottom image
-        image2 = new JLabel(new ImageIcon("memory_game.jpg"));
+        image2 = new JLabel(new ImageIcon("Images/memory_game.jpg"));
         setCenterAlignment(image2);
         p1.add(image2);
 
@@ -81,7 +81,8 @@ public class UserID extends JPanel{
         public void actionPerformed(ActionEvent e) {
             if (threeDigitID.getText().length() == 3){
                 if (!userExists()){
-                    WriteToFile newPlayer = new WriteToFile(ALL_PLAYERS, threeDigitID.getText(), true);
+                    WriteToFile addPlayer = new WriteToFile(ALL_PLAYERS, threeDigitID.getText(), true);
+                    WriteToFile newText = new WriteToFile(threeDigitID.getText() + ".txt", "", false);
                 }
                 mainListener.goToGame(Editor.GameMode.Memory);
             }
