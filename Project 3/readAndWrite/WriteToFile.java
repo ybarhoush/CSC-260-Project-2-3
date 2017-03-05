@@ -13,7 +13,7 @@ public class WriteToFile {
 
     public WriteToFile(String fileName, String lineToAdd, boolean fileExists){
 
-        try (FileWriter fw = new FileWriter(fileName,fileExists);
+        try (FileWriter fw = new FileWriter("Players/" + fileName,fileExists);
             BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter pw = new PrintWriter(bw))
         {
