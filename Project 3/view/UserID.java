@@ -1,15 +1,14 @@
 package view;
 
 import main.Editor;
-import readAndWrite.OutWrite;
+import readAndWrite.ReadFromFile;
+import readAndWrite.WriteToFile;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 
 /**
  * This class is the first window that the user sees when running the program.
@@ -19,6 +18,7 @@ import java.io.PrintWriter;
 public class UserID extends JPanel{
     private static final String ENTER_BUTTON = "Enter";
     private static final String USER_ID = "Enter Your Three Letter User ID:";
+    private static final String ALL_PLAYERS = "Players/AllPlayers.txt";
 
     private Editor mainListener;
     private JPanel p1;
@@ -79,8 +79,25 @@ public class UserID extends JPanel{
      */
     private class EnterButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            OutWrite userId = new OutWrite(threeDigitID.getText());
-            mainListener.goToGame(Editor.GameMode.Memory);
+            if (threeDigitID.getText().length() == 3){
+                if (!userExists()){
+                    WriteToFile newPlayer = new WriteToFile(ALL_PLAYERS, threeDigitID.getText(), true);
+                }
+                mainListener.goToGame(Editor.GameMode.Memory);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Please Enter three characters for your ID to continue to game.");
+            }
+
         }
+    }
+
+    private boolean userExists(){
+        ReadFromFile checkIfPlayerExists = new ReadFromFile(ALL_PLAYERS);
+        ArrayList<String> allPlayers = checkIfPlayerExists.returnLine();
+        if (allPlayers.contains(threeDigitID.getText())){
+            return true;
+        }
+        return false;
     }
 }
