@@ -13,7 +13,7 @@ public class ReadFromFile {
     private ArrayList<String > lines;
 
     public ReadFromFile(String fileName) {
-        this.fileName = fileName;
+        this.fileName = "Players/" + fileName;
         this.lines = new ArrayList<>();
     }
 
