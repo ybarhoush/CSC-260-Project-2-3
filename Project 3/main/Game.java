@@ -38,14 +38,14 @@ public class Game extends JPanel {
         this.gameView = new GameView(gameModel);
         this.endGameView = new EndGameView();
 
-            MemoryGameController = new MemoryGameController(gameModel, gameView, main);
-            gameView.attachListener(MemoryGameController);
+        MemoryGameController = new MemoryGameController(gameModel, gameView, main);
+        gameView.attachListener(MemoryGameController);
 
         add(gameView, BorderLayout.CENTER);
 
-            MemoryCmdbarView.attachListener(MemoryGameController);
-            MemoryCmdbarView MemoryCmdbarView = new MemoryCmdbarView();
-            add(MemoryCmdbarView, BorderLayout.NORTH);
+        MemoryCmdbarView.attachListener(MemoryGameController);
+        MemoryCmdbarView MemoryCmdbarView = new MemoryCmdbarView();
+        add(MemoryCmdbarView, BorderLayout.NORTH);
         }
 
 

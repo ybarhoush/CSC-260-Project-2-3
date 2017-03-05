@@ -104,27 +104,4 @@ public class GameView extends JPanel implements Observer {
             controller.cardClicked(cardView.getCardModel());
         }
     }
-//    /**
-//     * Highlights one set of cards with the orange color.
-//     * @param set set.
-//     */
-//    public void highlightOneSet(List<CardModel> set) {
-//        unhighlightAllCards();
-//        Color color = Color.orange;
-//        for (int j = 0; j < GameModel.PAIR_NUM; j++) {
-//            CardModel model = set.get(j);
-//            CardView view = cardViewMap.get(model);
-//            view.setHighlightColor(color);
-//            view.highlight();
-//        }
-//    }
-//
-//    /**
-//     * Unhighlights a set of cards.
-//     */
-//    private void unhighlightAllCards() {
-//        for (CardView cardView : cardViewMap.values()) {
-//            cardView.unHighlight();
-//        }
-//    }
 }
