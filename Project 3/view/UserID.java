@@ -1,11 +1,15 @@
 package view;
 
 import main.Editor;
+import readAndWrite.OutWrite;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 
 /**
  * This class is the first window that the user sees when running the program.
@@ -75,7 +79,7 @@ public class UserID extends JPanel{
      */
     private class EnterButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            //record data
+            OutWrite userId = new OutWrite(threeDigitID.getText());
             mainListener.goToGame(Editor.GameMode.Memory);
         }
     }
