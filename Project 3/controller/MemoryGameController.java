@@ -20,6 +20,7 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
     protected static GameView gameView;
     protected Editor mainListener;
 
+
     /**
      * Constructor that initializes the game controller of the solitaire mode.
      * @param m    GameModel
@@ -48,23 +49,6 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      */
     public void cardClicked(CardModel cardModel) {
         gameModel.addCardToSelection(cardModel);
-
-        if (gameModel.twoCardsSelected()) {
-            if (gameModel.isPair()) {
-                //--implement >> Highlight Color Green
-                //--prevent user from selecting more cards!!
-
-//                gameModel.clearSelectedCards();
-//                remove the set and deal three more;
-//                gameModel.removePair();
-//                if (gameModel.getCardsOnTable().size() < GameModel.Cards_ON_TABLE) {
-//                    gameModel.addThreeCards();
-//                }
-            }
-        }else {
-                //--implement >> Highlight Color Red
-                gameModel.clearSelectedCards();
-            }
     }
 
     /**
@@ -72,10 +56,12 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      * (the system must verify that the two cards really are a pair).
      */
     public static void removePair() {
+        gameModel.addPair();
+        pairCounter.setText(gameModel.getPairCounter());
         if (gameModel.twoCardsSelected())
             if (gameModel.isPair()) {
                 //--implement >> toggle Highlight Color Green
-                gameModel.removePair();
+                gameModel.keepPair();
                 gameModel.clearSelectedCards();
 
             } else {
@@ -88,6 +74,9 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
     /**
      * Shows a hint by highlighting a set if a set exists amongst the displayed cards.
      */
-    public static void turnOverCards() {}
+    public static void turnOverCards() {
+        gameModel.addTurn();
+        turnCounter.setText(gameModel.getTurnCounter());
+    }
 }
 

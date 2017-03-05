@@ -17,6 +17,8 @@ public class GameModel extends Observable{
     private DeckModel deck;
     private List<CardModel> cardsOnTable;
     private List<CardModel> selectedCards;
+    private int turnCounter;
+    private int pairCounter;
     private boolean isPlaying;
 
     /**
@@ -40,6 +42,8 @@ public class GameModel extends Observable{
         this.selectedCards.clear();
         this.deck.shuffle();
         dealSeventyTwo();
+        this.turnCounter = 0;
+        this.pairCounter = 0;
         setChanged();
         notifyObservers();
     }
@@ -58,9 +62,9 @@ public class GameModel extends Observable{
 
     /**
      * If the two cards that the user selects are a pair,
-     * this method removes those cards.
+     * this method keeps those cards facing up.
      */
-    public void removePair() {
+    public void keepPair() {
         for (CardModel selectedCard : selectedCards) {
             cardsOnTable.remove(selectedCard);
         }
@@ -75,7 +79,7 @@ public class GameModel extends Observable{
      */
     public boolean isPair() {
         if (twoCardsSelected()) {
-            return (isPair(selectedCards.get(0), selectedCards.get(1)));
+            return (checkPair(selectedCards.get(0), selectedCards.get(1)));
         }
         return false;
     }
@@ -87,7 +91,7 @@ public class GameModel extends Observable{
      * @param two cardModel
      * @return true iff the 2 given cards are a pair
      */
-    public boolean isPair(CardModel one, CardModel two) {
+    public boolean checkPair(CardModel one, CardModel two) {
         return (checkColor(one, two) && checkShape(one, two)
                 && checkShade(one, two) && checkNum(one, two));
     }
@@ -161,4 +165,14 @@ public class GameModel extends Observable{
         setChanged();
         notifyObservers();
     }
+
+    public void addTurn(){
+        this.turnCounter++;
+    }
+    public String getTurnCounter(){return Integer.toString(this.turnCounter);}
+
+    public void addPair(){
+        this.pairCounter++;
+    }
+    public String getPairCounter(){return Integer.toString(this.pairCounter);}
 }

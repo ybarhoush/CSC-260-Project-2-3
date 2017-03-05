@@ -67,33 +67,33 @@ public class CardView extends JPanel {
         }
     }
 
-//    /**
-//     * Highlights a card when being used
-//     * in the algorithm that displays a hint
-//     * or a set of cards to the player.
-//     */
-//    public void highlight() {
-//        setBackground(highlightColor);
-//        for (Shape shapeView : shapeViewList) {
-//            shapeView.setHighlightColor(highlightColor);
-//        }
-//    }
-//
-//    /**
-//     * Unhighlights a card.
-//     */
-//    public void unHighlight() {
-//        setHighlightColor(defaultColor);
-//        highlight();
-//    }
-//
-//
-//    /**
-//     * Highlights by changing the background color.
-//     * @param highlightColor Color to highlight with
-//     */
-//    public void setHighlightColor(Color highlightColor) {
-//        this.highlightColor = highlightColor;
-//    }
+    /**
+     * Highlights a card when being used
+     * in the algorithm that displays a hint
+     * or a set of cards to the player.
+     */
+    public void highlight() {
+        setBackground(highlightColor);
+        for (Shape shapeView : shapeViewList) {
+            shapeView.setHighlightColor(highlightColor);
+        }
+    }
+
+    /**
+     * Unhighlights a card.
+     */
+    public void unHighlight() {
+        setHighlightColor(defaultColor);
+        highlight();
+    }
+
+
+    /**
+     * Highlights by changing the background color.
+     * @param highlightColor Color to highlight with
+     */
+    public void setHighlightColor(Color highlightColor) {
+        this.highlightColor = highlightColor;
+    }
 }
 
