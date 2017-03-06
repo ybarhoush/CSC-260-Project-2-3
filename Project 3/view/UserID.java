@@ -84,7 +84,7 @@ public class UserID extends JPanel{
                     WriteToFile addPlayer = new WriteToFile(ALL_PLAYERS, threeDigitID.getText(), true);
                     WriteToFile newText = new WriteToFile(threeDigitID.getText() + ".txt", "", false);
                 }
-                mainListener.goToGame(Editor.GameMode.Memory);
+                mainListener.goToGame(Editor.GameMode.Memory, threeDigitID.getText() + ".txt");
             }
             else {
                 JOptionPane.showMessageDialog(null, "Please Enter three characters for your ID to continue to game.");

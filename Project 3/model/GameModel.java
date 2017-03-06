@@ -64,7 +64,7 @@ public class GameModel extends Observable{
      * If the two cards that the user selects are a pair,
      * this method keeps those cards facing up.
      */
-    public void keepPair() {
+    public void removePair() {
         for (CardModel selectedCard : selectedCards) {
             cardsOnTable.remove(selectedCard);
         }
