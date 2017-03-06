@@ -36,7 +36,7 @@ public class Game extends JPanel {
 
         this.gameModel = new GameModel();
         this.gameView = new GameView(gameModel);
-        this.endGameView = new EndGameView();
+        this.endGameView = new EndGameView(main);
 
         MemoryGameController = new MemoryGameController(gameModel, gameView, main);
         gameView.attachListener(MemoryGameController);
