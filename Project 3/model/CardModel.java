@@ -22,8 +22,6 @@ public class CardModel {
     private Shade shade;        //shade on the shapes on the card
     private Color color;        //color of shapes on card
     private boolean isSelected; //if card is selected by player
-    private static BufferedImage cardBackImage; // the back image of a card
-
     /**
      * Creates a new cardModel given a number that will represent
      * the number of shapes the card holds, shape on the card, shade
@@ -39,21 +37,6 @@ public class CardModel {
         this.shade = ss;
         this.color = c;
     }
-
-    /**
-     *
-     */
-    static {
-        try {
-            ClassLoader loader = CardModel.class.getClassLoader();
-            URL imageURL = loader.getResource("Images/backImage.jpg");
-            cardBackImage = ImageIO.read(Objects.requireNonNull(imageURL));
-        }
-        catch (Exception e) {
-            cardBackImage = null;
-        }
-    }
-
 
     /** getter methods */
     public int getShapeNum(){return this.shapeNum;}
