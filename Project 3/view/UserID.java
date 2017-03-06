@@ -89,9 +89,9 @@ public class UserID extends JPanel{
             else {
                 JOptionPane.showMessageDialog(null, "Please Enter three characters for your ID to continue to game.");
             }
-
         }
     }
+
 
     private boolean userExists(){
         ReadFromFile checkIfPlayerExists = new ReadFromFile(ALL_PLAYERS);

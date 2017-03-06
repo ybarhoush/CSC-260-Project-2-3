@@ -21,8 +21,8 @@ public class DeckModel {
      */
     public DeckModel(){
         this.deck = new ArrayList<>(DECK_LENGTH);
-//        createHalfDeck();
-        duplicateDeck();
+        createHalfDeck();
+//        duplicateDeck();
         this.index = DECK_LENGTH - 1;
     }
 
@@ -49,17 +49,19 @@ public class DeckModel {
      */
     private void createHalfDeck(){
         Color[] colors = new Color[]{Color.red, Color.green, Color.blue};
-        int i = 0;
+        for (int r = 0; r < 2; r++){
+            int i = 0;
             for (int number = 1; number <= 2; number++){
                 for (CardModel.Shape shape : CardModel.Shape.values()){
                     for (CardModel.Shade shade : CardModel.Shade.values()){
                         for (Color color : colors){
-                            this.deck.add(i, new CardModel(number, shape, shade, color));
+                            this.deck.add(i+(r*(DECK_LENGTH/2)), new CardModel(number, shape, shade, color));
                             i++;
                         }
                     }
                 }
             }
+        }
     }
 
 
@@ -106,10 +108,16 @@ public class DeckModel {
         }
         return q;
     }
+    public boolean halfDeckIsUnique(){
+        if (this.halfDeckHasNoDuplicate() == 0){
+            return true;
+        }
+        return false;
+    }
     public int halfDeckHasNoDuplicate(){
         int r = 0;
-        for (int i = 0; i<72; i++){
-            for (int j = (i+1); j < this.deck.size(); j++){
+        for (int i = 0; i<36; i++){
+            for (int j = (i+1); j < 36; j++){
                     CardModel a = this.deck.get(i);
                     CardModel b = this.deck.get(j);
 
