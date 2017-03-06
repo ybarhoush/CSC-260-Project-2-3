@@ -40,6 +40,9 @@ public class CardModel {
         this.color = c;
     }
 
+    /**
+     *
+     */
     static {
         try {
             ClassLoader loader = CardModel.class.getClassLoader();
