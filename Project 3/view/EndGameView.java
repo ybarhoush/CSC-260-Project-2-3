@@ -78,6 +78,10 @@ public class EndGameView extends JPanel {
         component.setAlignmentY(Component.CENTER_ALIGNMENT);
     }
 
+//    private String readTopTenScores(){
+//        WriteToFile addScore = new WriteToFile(fileName, Integer.toString(), true);
+//    }
+
     /**
      * Enter button is pressed.
      */
