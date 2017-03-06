@@ -16,7 +16,7 @@ import java.util.List;
 public class CardView extends JPanel {
 
     private static final Border nullBorder = BorderFactory.createEmptyBorder();
-    private static final Border selectedBorder = BorderFactory.createLineBorder(Color.BLACK);
+    private static final Border selectedBorder = BorderFactory.createStrokeBorder(new BasicStroke(50.0f));
 
     private CardModel cardModel;
     private Color highlightColor;
@@ -31,7 +31,6 @@ public class CardView extends JPanel {
         super();
         this.cardModel = cardModel;
         this.shapeViewList = new ArrayList<>();
-        this.highlightColor = Color.YELLOW;
         this.defaultColor = Color.WHITE;
 
         setLayout(new GridLayout(1, 3));
@@ -66,6 +65,7 @@ public class CardView extends JPanel {
             setBorder(nullBorder);
         }
     }
+
 
     /**
      * Highlights a card when being used
