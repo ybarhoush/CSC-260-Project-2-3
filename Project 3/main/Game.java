@@ -21,6 +21,7 @@ public class Game extends JPanel {
     private GameModel gameModel;
     private GameView gameView;
     private final Editor.GameMode gameMode;
+    private String fileName;
 
     /**
      * Constructor for creating a new main.Game object.
@@ -28,15 +29,16 @@ public class Game extends JPanel {
      * @param main main.Editor object.
      * @param mode main.Game mode of game type to create.
      */
-    public Game(Editor main, Editor.GameMode mode) {
+    public Game(Editor main, Editor.GameMode mode, String fileName) {
         super();
         this.main = main;
         this.gameMode = mode;
+        this.fileName = fileName;
         setLayout(new BorderLayout());
 
         this.gameModel = new GameModel();
         this.gameView = new GameView(gameModel);
-        this.endGameView = new EndGameView(main);
+        this.endGameView = new EndGameView(main, fileName);
 
         MemoryGameController = new MemoryGameController(gameModel, gameView, main);
         gameView.attachListener(MemoryGameController);

@@ -61,7 +61,7 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
         if (gameModel.twoCardsSelected())
             if (gameModel.isPair()) {
                 //--implement >> toggle Highlight Color Green
-                gameModel.keepPair();
+                gameModel.removePair();
                 gameModel.clearSelectedCards();
 
             } else {
