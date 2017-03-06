@@ -96,9 +96,9 @@ public class Editor {
      *
      * @param mode
      */
-    public void goToGame(GameMode mode) {
+    public void goToGame(GameMode mode, String fileName) {
         if (!(getContentPane() instanceof Game)) {
-            Game game = new Game(this, mode);
+            Game game = new Game(this, mode, fileName);
             frame.setTitle(getFrameTitle(mode));
             updateContentPane(game);
             game.newMemoryGame();
