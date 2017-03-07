@@ -69,22 +69,23 @@ public class GameModel extends Observable{
     public void removePair() {
         for (CardModel selectedCard : selectedCards) {
                 selectedCard.unSelect();
-                this.pairCounter++;
+
                 if (this.pairCounter == 36){
                     
                 }
 //                cardsOnTable.remove(selectedCard);
         }
-
+        addPair();
     }
 
     public void turnOverCards(){
         for (CardModel selectedCard : selectedCards) {
             selectedCard.isSelected();
 //            cardsOnTable.remove(selectedCard);
-            this.turnCounter++;
+
 
         }
+        addTurn();
         clearSelectedCards();
         setChanged();
         notifyObservers();
