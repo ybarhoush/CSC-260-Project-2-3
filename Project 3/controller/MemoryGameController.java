@@ -19,6 +19,7 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
     protected static GameModel gameModel;
     protected static GameView gameView;
     protected Editor mainListener;
+    protected String currentFileName;
 
 
     /**
@@ -28,11 +29,12 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      * @param v    GameView
      * @param main Editor
      */
-    public MemoryGameController(GameModel m, GameView v, Editor main) {
+    public MemoryGameController(GameModel m, GameView v, Editor main, String fileName) {
         super();
         gameModel = m;
         gameView = v;
         mainListener = main;
+        currentFileName = fileName;
     }
 
     /**
@@ -53,6 +55,10 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
     public void cardClicked(CardModel cardModel) {
         if (!gameModel.twoCardsSelected() && !gameModel.getSelectedCards().contains(cardModel)) {
             gameModel.addCardToSelection(cardModel);
+
+            if (Integer.parseInt(gameModel.getPairCounter()) == 36){
+                mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getPairCounter()));
+            }
         }
     }
 

@@ -1,5 +1,6 @@
 package main;
 
+import view.EndGameView;
 import view.UserID;
 
 import javax.swing.*;
@@ -18,6 +19,7 @@ public class Editor {
     private static final String USER_ID_TITLE = "User ID";
 //    private static final String MENU_FRAME_TITLE = "Game of Set";
     private static final String MEMORY_FRAME_TITLE = "Memory Mode";
+    private static final String END_OF_GAME_FRAME_TITLE = "Game Over";
 
     /**
      * Represents the different game modes of the Set game.
@@ -90,6 +92,13 @@ public class Editor {
         }
     }
 
+    public void goToEndGameView(String fileName, int currentScore){
+        if (!(getContentPane() instanceof EndGameView)) {
+            EndGameView endGameView = new EndGameView(this, fileName, currentScore);
+            frame.setTitle(END_OF_GAME_FRAME_TITLE);
+            updateContentPane(endGameView);
+        }
+    }
 
     /**
      * Sets the display to game.

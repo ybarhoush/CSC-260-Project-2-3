@@ -31,7 +31,7 @@ public class EndGameView extends JPanel {
      * Initiates GUI
      * @param mainListener
      */
-    public EndGameView(Editor mainListener, String fileName) {
+    public EndGameView(Editor mainListener, String fileName, int currentScore) {
         this.mainListener = mainListener;
         this.fileName = fileName;
 

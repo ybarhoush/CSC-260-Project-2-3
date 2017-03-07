@@ -16,7 +16,7 @@ import java.awt.*;
 public class Game extends JPanel {
 
     private final Editor main;
-    private final EndGameView endGameView;
+//    private final EndGameView endGameView;
     private MemoryGameController MemoryGameController;
     private GameModel gameModel;
     private GameView gameView;
@@ -38,9 +38,9 @@ public class Game extends JPanel {
 
         this.gameModel = new GameModel();
         this.gameView = new GameView(gameModel);
-        this.endGameView = new EndGameView(main, fileName);
+//        this.endGameView = new EndGameView(main, fileName);
 
-        MemoryGameController = new MemoryGameController(gameModel, gameView, main);
+        MemoryGameController = new MemoryGameController(gameModel, gameView, main, fileName);
         gameView.attachListener(MemoryGameController);
 
         add(gameView, BorderLayout.CENTER);
