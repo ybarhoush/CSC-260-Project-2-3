@@ -1,4 +1,6 @@
 package model;
+import view.UserID;
+
 import java.util.Observable;
 
 import java.util.ArrayList;
@@ -67,6 +69,10 @@ public class GameModel extends Observable{
     public void removePair() {
         for (CardModel selectedCard : selectedCards) {
                 selectedCard.unSelect();
+                this.pairCounter++;
+                if (this.pairCounter == 36){
+                    
+                }
 //                cardsOnTable.remove(selectedCard);
         }
 
@@ -76,6 +82,7 @@ public class GameModel extends Observable{
         for (CardModel selectedCard : selectedCards) {
             selectedCard.isSelected();
 //            cardsOnTable.remove(selectedCard);
+            this.turnCounter++;
 
         }
         clearSelectedCards();
@@ -181,8 +188,6 @@ public class GameModel extends Observable{
     }
     public String getTurnCounter(){return Integer.toString(this.turnCounter);}
 
-    public void addPair(){
-        this.pairCounter++;
-    }
+    public void addPair(){this.pairCounter++;}
     public String getPairCounter(){return Integer.toString(this.pairCounter);}
 }
