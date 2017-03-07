@@ -1,10 +1,7 @@
 package model;
-import view.UserID;
-
-import java.util.Observable;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
 /**
  * GameModel is the backbone of the game. Using the observer pattern
@@ -73,7 +70,6 @@ public class GameModel extends Observable{
                 if (this.pairCounter == 36){
                     
                 }
-//                cardsOnTable.remove(selectedCard);
         }
 
     }
@@ -81,7 +77,6 @@ public class GameModel extends Observable{
     public void turnOverCards(){
         for (CardModel selectedCard : selectedCards) {
             selectedCard.isSelected();
-//            cardsOnTable.remove(selectedCard);
             this.turnCounter++;
 
         }
