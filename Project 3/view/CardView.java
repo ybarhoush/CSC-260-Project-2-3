@@ -34,7 +34,6 @@ public class CardView extends JPanel {
         setBackground(Color.WHITE);
         addShapes();
         toggleSelection();
-
     }
 
     /**
@@ -62,13 +61,5 @@ public class CardView extends JPanel {
             setBorder(selectedBorder);
         }
     }
-
-//    private void toggleSelection() {
-//        if (cardModel.isSelected()) {
-//            setBorder(selectedBorder);
-//        } else {
-//            setBorder(nullBorder);
-//        }
-//    }
 }
 
