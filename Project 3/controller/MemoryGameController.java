@@ -57,11 +57,13 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      * @param cardModel the card that the user clicks
      */
     public void cardClicked(CardModel cardModel) {
-        if (!gameModel.twoCardsSelected() && !gameModel.getSelectedCards().contains(cardModel)) {
-            gameModel.addCardToSelection(cardModel);
+        if (!gameModel.cardRemoved(cardModel)) {
+            if (!gameModel.twoCardsSelected() && !gameModel.getSelectedCards().contains(cardModel)) {
+                gameModel.addCardToSelection(cardModel);
 
-            if (Integer.parseInt(gameModel.getPairCounter()) == 36){
-                mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getPairCounter()));
+                if (gameModel.endGame()) {
+                    mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getPairCounter()));
+                }
             }
         }
     }
@@ -90,17 +92,6 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
         if (gameModel.twoCardsSelected()) {
             gameModel.turnOverCards();
             turnCounter.setText(gameModel.getTurnCounter());
-
-        }
-    }
-
-    /**
-     * If the game is over after the number of pairs are collected, the
-     * game officially ends.
-     */
-    public void GameOver() {
-        if (gameModel.endGame()) {
-            mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getTurnCounter()));
         }
     }
 }
