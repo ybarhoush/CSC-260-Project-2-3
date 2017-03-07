@@ -41,6 +41,8 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      */
     public static void newGame() {
         gameModel.newGame();
+        turnCounter.setText(gameModel.getTurnCounter());
+        pairCounter.setText(gameModel.getPairCounter());
     }
 
     /**
@@ -61,12 +63,19 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      */
     public static void removePair() {
         if ( gameModel.isPair()) {
+<<<<<<< HEAD
                 List<CardModel> pair = gameModel.selectedPair();
                 pairCounter.setText(gameModel.getPairCounter());
                 //--implement >> toggle Highlight Color Green
                 gameModel.removePair();
                 //gameView.highlightPair(pair);
                 turnOverCards();
+=======
+            gameModel.removePair();
+                pairCounter.setText(gameModel.getPairCounter());
+                //--implement >> toggle Highlight Color Green
+
+>>>>>>> 1a60b64b13eba2da5ff8c4fcc73727b00571b409
 
             }
             else {
@@ -79,8 +88,9 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      */
     public static void turnOverCards() {
         if(gameModel.twoCardsSelected()){
-            turnCounter.setText(gameModel.getTurnCounter());
             gameModel.turnOverCards();
+            turnCounter.setText(gameModel.getTurnCounter());
+
         }
     }
 }
