@@ -1,0 +1,1 @@
+To run this program go to “main” package and right click on Editor class then do Editor.main
