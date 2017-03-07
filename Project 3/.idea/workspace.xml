@@ -78,25 +78,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MemoryGameController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MemoryGameController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/MemoryGameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="60" column="114" lean-forward="false" selection-start-line="60" selection-start-column="114" selection-end-line="60" selection-end-column="114" />
+            <state relative-caret-position="3">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/GameModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-993">
-              <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="19" />
+            <state relative-caret-position="222">
+              <caret line="80" column="18" lean-forward="false" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6598#6599#0" expanded="true" />
-                <element signature="e#6663#6664#0" expanded="true" />
+                <element signature="e#6617#6618#0" expanded="true" />
+                <element signature="e#6682#6683#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -659,8 +659,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6598#6599#0" expanded="true" />
-            <element signature="e#6663#6664#0" expanded="true" />
+            <element signature="e#6617#6618#0" expanded="true" />
+            <element signature="e#6682#6683#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -776,8 +776,8 @@
           <caret line="90" column="25" lean-forward="true" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6598#6599#0" expanded="true" />
-            <element signature="e#6663#6664#0" expanded="true" />
+            <element signature="e#6617#6618#0" expanded="true" />
+            <element signature="e#6682#6683#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,8 +865,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6598#6599#0" expanded="true" />
-            <element signature="e#6663#6664#0" expanded="true" />
+            <element signature="e#6617#6618#0" expanded="true" />
+            <element signature="e#6682#6683#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1058,23 +1058,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/GameModel.java">
+    <entry file="file://$PROJECT_DIR$/controller/MemoryGameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-993">
-          <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6598#6599#0" expanded="true" />
-            <element signature="e#6663#6664#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/MemoryGameController.java">
+    <entry file="file://$PROJECT_DIR$/model/GameModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="60" column="114" lean-forward="false" selection-start-line="60" selection-start-column="114" selection-end-line="60" selection-end-column="114" />
-          <folding />
+        <state relative-caret-position="222">
+          <caret line="80" column="18" lean-forward="false" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6617#6618#0" expanded="true" />
+            <element signature="e#6682#6683#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
