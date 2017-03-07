@@ -74,6 +74,7 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
         if (gameModel.isPair()) {
             gameModel.removePair();
             pairCounter.setText(gameModel.getPairCounter());
+            turnCounter.setText(gameModel.getTurnCounter());
 
             //--implement >> toggle Highlight Color Green
 
