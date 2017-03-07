@@ -61,21 +61,22 @@ public class GameModel extends Observable{
     }
 
     /**
-     * Adds the image of the back of a trump card to each card in a deck.
-     */
-    private void addBackImage(){
-        for (int i = 0; i < CARDS_ON_TABLE; i ++){
-
-        }
-    }
-
-    /**
      * If the two cards that the user selects are a pair,
      * this method keeps those cards facing up.
      */
     public void removePair() {
         for (CardModel selectedCard : selectedCards) {
-            cardsOnTable.remove(selectedCard);
+                selectedCard.unSelect();
+//                cardsOnTable.remove(selectedCard);
+        }
+
+    }
+
+    public void turnOverCards(){
+        for (CardModel selectedCard : selectedCards) {
+            selectedCard.isSelected();
+//            cardsOnTable.remove(selectedCard);
+
         }
         clearSelectedCards();
         setChanged();

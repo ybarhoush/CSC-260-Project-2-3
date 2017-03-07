@@ -1,0 +1,735 @@
+commit c4570605d060b13aa17109d1fffcd20ee08bded3
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Mon Mar 6 15:03:03 2017 -0500
+
+    cardView modified to support a face
+
+commit b1f57cd43edf0e9e7e3ac161b4b31d192c13a7e4
+Author: David Koval <kovald@union.edu>
+Date:   Mon Mar 6 15:01:50 2017 -0500
+
+    game model fixing
+
+commit 0f6f931699f52dd03c7bc35aefcb4b28ac06fc55
+Author: David Koval <kovald@union.edu>
+Date:   Mon Mar 6 14:28:42 2017 -0500
+
+    more EndGameView
+
+commit 99f932d632c5b62b135fd121b9d13f2752e473b8
+Merge: 6b4c110 a489194
+Author: David Koval <kovald@union.edu>
+Date:   Mon Mar 6 14:16:41 2017 -0500
+
+     updated EndGameView class
+
+commit 6b4c110e8d9a1e6007475b0cbb5ad89c6d754237
+Author: David Koval <kovald@union.edu>
+Date:   Mon Mar 6 14:14:04 2017 -0500
+
+    made EndGameView class
+
+commit ed302fdea60b63c81f27615b1c7432e04a769c57
+Author: David Koval <kovald@union.edu>
+Date:   Mon Mar 6 14:10:58 2017 -0500
+
+    created EndGameView class
+
+commit a489194ff3bc2a5bab25fd78bc3e7fc9e2092632
+Merge: 6b0a9f4 8812776
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Mon Mar 6 13:42:52 2017 -0500
+
+    Implemented an intializer so that when CardModel is loaded for the first time, all cards in the display view are faced down
+
+commit 6b0a9f415de854563bdb693c73882271ebb8a256
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Mon Mar 6 13:40:07 2017 -0500
+
+    Implemented an initializer to CardModel so that when its initially loaded, all cards are faced down in the gameView
+
+commit 625bc367982ced91657986e902e912445a1ff31c
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Mon Mar 6 13:37:20 2017 -0500
+
+    Changed the name of the back image of a card and implemented an initializer to cardModel so that the first image loaded in the display view is faced-down
+
+commit 881277647aa8c2742bd8b8845451c9910f401a56
+Author: David Koval <kovald@union.edu>
+Date:   Mon Mar 6 13:09:04 2017 -0500
+
+    solved the issue in deck class that selects a cards duplicate when one card is selected
+
+commit 774a8f75e9a3b5cd5ec2978fd77c80a8ec086799
+Author: David Koval <kovald@union.edu>
+Date:   Sun Mar 5 00:16:07 2017 -0500
+
+    made counters for buttons and displayed them on the command bar view so that the player can see the counters go up when they click the buttons
+
+commit c86f35eaa7c4db77ac5bb43784fe6fe1ea826c89
+Author: David Koval <kovald@union.edu>
+Date:   Sat Mar 4 21:47:20 2017 -0500
+
+    can write file for new player and keep track of score now
+
+commit a95b8d22ea6b530752960e0b0e147ebec551ee02
+Author: David Koval <kovald@union.edu>
+Date:   Sat Mar 4 21:15:39 2017 -0500
+
+    record if user id is new player or returning player
+
+commit ae8b943bff283ec42e623ad9848bc540d308ad61
+Author: David Koval <kovald@union.edu>
+Date:   Sat Mar 4 19:32:50 2017 -0500
+
+    added read/write files
+
+commit cbe50d099d65c56c68bfe916a27aaa5add716050
+Author: David Koval <kovald@union.edu>
+Date:   Sat Mar 4 05:35:59 2017 -0500
+
+    Added comments to added classes
+
+commit 8523c9103da35d3eacb9b81de5ce96b36ba83f23
+Author: David Koval <kovald@union.edu>
+Date:   Sat Mar 4 05:19:07 2017 -0500
+
+    fixed duplicate problem, made a test class to test that a each time a deck is made that it holds 36 unique cards and only one duplicate (together they form only one possible pair)
+
+commit 1ba5415fccb4282a1f96c3fd30213297c7e9cd7d
+Author: David Koval <kovald@union.edu>
+Date:   Sat Mar 4 01:10:01 2017 -0500
+
+    finished the classes and window that first appears and askes user for a 3 digit id
+
+commit 3540ca0447203e567848d6969a828f7117058617
+Author: David Koval <kovald@union.edu>
+Date:   Fri Mar 3 19:00:29 2017 -0500
+
+    Adding classes and interface for prompting user with ID window and asking if they are a returning or new player to the game
+
+commit 299f85cd7e8f112a47b69d7edea4cd5687414386
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Mar 1 21:34:03 2017 -0500
+
+    (Remove Tutorial Mode from the game): --Deleted Classes: TutorialCmdbarView.java, TutorialGameController.java and TutorialSets.java. --Classes modified: Editor.java, Game.java and MainMenuWindow.java. Classes modified for Solitaire Mode to become Memory Mode --Replaced every single Solitaire with Memory. MemoryCmdbarView: JButton addThreeButton with removePairButton, JButton showHintButton with turnOverCardsButton, ShowHintListener with removePairListener, AddThreeListener with turnOverCardsListener. MemoryGameController: drawThreeCards() with removePair(), showHint() with turnOverCardsButton(), GameModel.java. Change: checkColor(), checkShape(), checkShade() and checkNum() to Check whether one individual feature of two given cards is the same. Change checkSet(CardModel one, CardModel two, CardModel three) to checkPair(CardModel one, CardModel two), isSet() to isPair(), dealTwelve() to deal SeventyTwo(), removeSet() to removePair(). GameView.java: 72 playing cards, 9 rows of 8 cards.
+
+commit b427e86eea2b47f84fad66e08fe7e4ce0c982db9
+Author: David Koval <kovald@union.edu>
+Date:   Mon Feb 27 21:03:10 2017 -0500
+
+    copied useful files from projet 2 to project 3
+
+commit b074b7f1e4e1b32ee536f47290ef78ccef231a84
+Author: David Koval <kovald@union.edu>
+Date:   Mon Feb 27 20:59:52 2017 -0500
+
+    copied useful files from projet 2 to project 3
+
+commit fc99767f65eba288bd9582fb3fd0b339bc974426
+Merge: 5389458 d223a1c
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Fri Feb 24 08:23:59 2017 -0500
+
+    Documentation in every class
+
+commit 5389458d2df6054fdfd08a8a17365f0265249ed8
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Fri Feb 24 08:19:40 2017 -0500
+
+    Documentation in every class
+
+commit d223a1c11a4cf05c1c570049bf7dc82f266dd7a3
+Author: David Koval <kovald@union.edu>
+Date:   Fri Feb 24 07:36:42 2017 -0500
+
+    minor changes
+
+commit 3f425aeee4e895f0c6813aaed4613683b85f1fa5
+Author: David Koval <kovald@union.edu>
+Date:   Fri Feb 24 07:33:09 2017 -0500
+
+    updated more comments
+
+commit 374798ac62fd60a77ccf8a5f216cbd1eb3181301
+Author: David Koval <kovald@union.edu>
+Date:   Fri Feb 24 07:04:39 2017 -0500
+
+    updated comments
+
+commit e174f3516f7c0f0df88edcf13c9daeb24a592dd2
+Merge: aa094dd b3f30de
+Author: David Koval <kovald@union.edu>
+Date:   Fri Feb 24 05:58:19 2017 -0500
+
+    updated editor
+
+commit aa094ddf9d17a2e5d2848ccec8d0e0b8a2b65730
+Author: David Koval <kovald@union.edu>
+Date:   Fri Feb 24 05:57:24 2017 -0500
+
+    editor class edited
+
+commit b3f30dee1fb37917ce20620ecb0ff3099f152d33
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Thu Feb 23 23:40:47 2017 -0500
+
+    Documentation for editor is complete
+
+commit eac5804af4a39e57e41e818f3a00738423184498
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Thu Feb 23 23:22:10 2017 -0500
+
+    Documentation for commandbars and controllers are done
+
+commit 5521a0facc50e6326585cf5e3da4428652d81481
+Merge: 488ce9f 07fa7e9
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Thu Feb 23 23:05:33 2017 -0500
+
+    Documentation processing..
+
+commit 488ce9ff3ef69ef3dc8ff40fe1e03571a937f90b
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Thu Feb 23 23:03:32 2017 -0500
+
+    Documentation process done
+
+commit 5b75602c9440dd10ddecc1c8973780d92e2ea83a
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Thu Feb 23 23:01:52 2017 -0500
+
+    Comments on SolitaireCmdbarView.java are written
+
+commit 07fa7e9effe325c3812c567bd3b2545ced0836d4
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 22:53:28 2017 -0500
+
+    updated tutorial sets
+
+commit 95b9fa5ff0ed035a82532c0313eb72f49808284e
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 22:07:19 2017 -0500
+
+    fixed package problems
+
+commit 44a1ef2ea28c459979932c471e6e8797fa9c5fbb
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 21:55:15 2017 -0500
+
+    moved packages
+
+commit f9998b428533f8d7e6f4df347492ca2950f0c390
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 21:41:27 2017 -0500
+
+    removing tutorial set extra window
+
+commit 20ecb23ef6fd8b0120a37fd69f20674d9588435b
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 21:29:55 2017 -0500
+
+    recovered copy
+
+commit fc037161c52eff4805de59d6e2b32d18073469e7
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 21:18:50 2017 -0500
+
+    removed factory
+
+commit e7e37f43d799982ba0d64ad963cdb86927041cf7
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 21:08:39 2017 -0500
+
+    hoping it is gonna work guys ..
+
+commit a50e747873211ca559efdbea4e57f2338d8ee095
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 20:58:01 2017 -0500
+
+    back up copy of  project
+
+commit a1ce7a4cb14366bdb9b34d86fd47b53d1c2c2833
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 20:57:03 2017 -0500
+
+    Merge branch 'master' of cs-git.union.edu:lssd-w17-bklv
+
+commit e72e651e6f50a2a530d935f62b07d12d95b5eae7
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 19:40:48 2017 -0500
+
+    copying code back
+
+commit 418ae0e836bf9f6ae08a6dca690c8ac55173a53e
+Merge: 3d8b940 69e9af8
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Thu Feb 23 19:32:45 2017 -0500
+
+    trying to fix the repo. David pushed his Desktop
+
+commit 3d8b940a55c8ba40c03dbaea0ffc0e6851f5ef5e
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Thu Feb 23 19:31:53 2017 -0500
+
+    trying to fix the repo. David pushed his Desktop
+
+commit 69e9af84450f8364f2a94aff3f9dd56d79f6e63a
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 19:29:10 2017 -0500
+
+    pushed wrong files
+
+commit d86ac798bde9f17f4596744fd91a0c864d7ae114
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 19:25:57 2017 -0500
+
+    pushed wrong file
+
+commit 936acee8d0f2bfa4ee7ba7ed7b96ea557848a6ad
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 19:21:09 2017 -0500
+
+    i messed up the last time
+
+commit 95a40c88800b9585f3811b6b770d9699f6c701d2
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 19:15:53 2017 -0500
+
+    fixed bug in shapes and program now runs
+
+commit b048f089ee8a38d809e544e11b9e3c0e36da1364
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 06:05:02 2017 -0500
+
+    finalized controller package
+
+commit 05756a92fe2adca526cf579702cbc7d2cf7092f8
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 05:48:41 2017 -0500
+
+    how to display tutorial sets
+
+commit 35308eeb8260b05738140f564def2aba368b6caa
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 05:44:13 2017 -0500
+
+    updated cardmodel and deckmodel
+
+commit 1541ddbe949a5cac135a9881bb5ab32922866988
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 05:28:44 2017 -0500
+
+    updated view package
+
+commit ffe2473e31451049b8bf1312241ceb993635666b
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 05:00:34 2017 -0500
+
+    fixed up Main and Game class
+
+commit fd7eafa86d0f7d623136d5a6d47dc3002cf943f5
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 23 04:55:07 2017 -0500
+
+    updated Main class
+
+commit f408c6c31069c370b3db3182e2d3cfdeda417203
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 19:58:38 2017 -0500
+
+    ShapeFactory
+
+commit b9d8f3b1b4d11e69d80939f99c12c9da2081d028
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 19:50:39 2017 -0500
+
+    shapes...
+
+commit 0496d658a34fdeddb41a57a333e1b6add003f2ad
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 19:29:21 2017 -0500
+
+    src folder
+
+commit 00bc1ac21029b4a294c37ab6dbd2fd81418adb03
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 19:25:41 2017 -0500
+
+    working on shapes .. needs fixing to get the game working
+
+commit 5ddd36cec9e30002debd0741355abe9648ce2ed8
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 19:20:54 2017 -0500
+
+    implemented Observer pattern for interactions with the game betweem GameViewClass and GameModel:: GameView implements Observer .. interface GameViewListener .. GameModel extends Observablegit add --all
+
+commit 5dafdcd912156cb5d02408aa9d04329c72ff1856
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 19:01:06 2017 -0500
+
+    putting things together .. changing packaging .. imports
+
+commit 4f9f312994ced7330c21f2d1cdb042faf0500979
+Merge: 54fd511 92cb2d9
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Wed Feb 22 18:54:29 2017 -0500
+
+    packages fixed
+
+commit 54fd511b2877b464d9e36bd31e505ad8abded783
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Wed Feb 22 18:52:27 2017 -0500
+
+    Packages fixed
+
+commit 92cb2d94cff46c1387ed7087f5b0c59406bd3060
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 18:50:20 2017 -0500
+
+    trying to put things together
+
+commit 557f94f20e9bed09c78d2c3128bb3141274bbd58
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 18:44:50 2017 -0500
+
+    main menu
+
+commit e0216f0335c79ca4c0703d54ea28103ef4818231
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 18:32:59 2017 -0500
+
+    edit menu and game
+
+commit 49780c202c71d78b351c97c23829a4e4acd26a32
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 18:27:30 2017 -0500
+
+    command bars edited
+
+commit 9fac0a10f19253e859cc96cb406166287d5bdc4d
+Author: Nicholas <Nicholas>
+Date:   Wed Feb 22 16:21:03 2017 -0500
+
+    Removed some lines of redundant code in ShapeFactory.java.
+
+commit 1353e9c1fe25daab2d4e5b41901528c9549872bd
+Merge: ed8a61c d62afe4
+Author: Nicholas <Nicholas>
+Date:   Wed Feb 22 15:51:36 2017 -0500
+
+    Merge branch 'master' of cs-git.union.edu:lssd-w17-bklv
+
+commit ed8a61c19501897be58ae3423f6630f4cceeb259
+Author: Nicholas <Nicholas>
+Date:   Wed Feb 22 15:51:26 2017 -0500
+
+    Added ShapeFactory.java as I seem to have forgotten to include it.  It's used for displaying the cards with the colors, shapes, shadings, and number of shapes based on input parameters.
+
+commit d62afe44704942271aefe8570d6fe47b9d3efe93
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Wed Feb 22 15:50:20 2017 -0500
+
+    Debugging CommandBar package complete
+
+commit 3370602ab5320878e71bd1f6969e2979f631d56d
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 15:33:40 2017 -0500
+
+    command bars fixed!
+
+commit 9d5571ba75190c1bf7f9ad9dc9b9e7f50df19e30
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 13:59:16 2017 -0500
+
+    controllers integeration with other classes -- main and mainmenu
+
+commit 55e16982eb4649270cfdbdb6637141225f6ff295
+Merge: 955dc9e 7305c5a
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Wed Feb 22 13:15:26 2017 -0500
+
+    merging to pull
+
+commit 955dc9ebb9738a5d62868312e6a0c51ef10e023d
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Tue Feb 21 23:19:54 2017 -0500
+
+    merging ...
+
+commit 7305c5a911bb5f6199fd5b3804c07b9123e4069e
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Tue Feb 21 23:19:07 2017 -0500
+
+    Deleted all classes accidentally. Restocking process
+
+commit 039ad6d2e368f54aab85e0e875bf2f959235af57
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Tue Feb 21 23:16:55 2017 -0500
+
+    fixing the repo
+
+commit 5792e4aff40c8d14f0bbff2d297958171d220884
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Tue Feb 21 23:11:42 2017 -0500
+
+    CommandBar package updated
+
+commit a24c8dd9ea4e67f23c20da81258fe5781c7e269f
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Tue Feb 21 22:50:15 2017 -0500
+
+    control classes done
+
+commit 17a09e82ae6755181f810e7f200bff9bd4fbd527
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Tue Feb 21 15:30:16 2017 -0500
+
+    controllers implementations and changed the packaging of the project
+
+commit 00d0103bbbe1944e9124e9dcceea6c874a47c040
+Author: David Koval <kovald@union.edu>
+Date:   Tue Feb 21 08:14:25 2017 -0500
+
+    added readme file to main package
+
+commit eeb103af0c311b2d3382afa91dc23d3d612f4930
+Author: David Koval <kovald@union.edu>
+Date:   Tue Feb 21 08:10:44 2017 -0500
+
+    updated controllers
+
+commit b6839cafd1ddce457dab46b856a9c6faa1f69db4
+Merge: 87580dd bab15ee
+Author: David Koval <kovald@union.edu>
+Date:   Tue Feb 21 08:08:49 2017 -0500
+
+    working on main package
+
+commit 87580dd0159c20b6da512ad8c24dbe9e09b4b17e
+Author: David Koval <kovald@union.edu>
+Date:   Tue Feb 21 08:05:58 2017 -0500
+
+    Game and game mode classes updated
+
+commit bab15ee887bc04342737be0dd0c427dd8ceeb4aa
+Merge: b921145 72d8ad0
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Mon Feb 20 20:16:28 2017 -0500
+
+    working on command bar
+
+commit b921145e566407921205de18f7e7f771c9cda5ce
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Mon Feb 20 14:37:16 2017 -0500
+
+    working on control classes
+
+commit 72d8ad0bf9f7114a23782989e6a71e171e266785
+Author: Nicholas <Nicholas>
+Date:   Sun Feb 19 18:38:46 2017 -0500
+
+    Removed DeckModel.java and updated Deck.java with the code from DeckModel.java.  Still included some classes from original Deck.java and will consider updating code as needed.
+
+commit 48730a13a04f383f861c027269a7bfb834da29c1
+Author: Nicholas <Nicholas>
+Date:   Sun Feb 19 18:15:50 2017 -0500
+
+    Re-added DeckModel.java because it got deleted when the 'Shape' package was removed.
+
+commit a69a01ba1e4c282e50b1461280ae93ce413d65d4
+Author: Nicholas <Nicholas>
+Date:   Sun Feb 19 17:58:39 2017 -0500
+
+    Updated Card.java using code from CardModel.java.  Also removed 'Shape' package to prevent complications.
+
+commit 771dd59d36b62d2296898bccdc89af8dd9b45177
+Author: David Koval <kovald@union.edu>
+Date:   Sun Feb 19 17:23:14 2017 -0500
+
+    updated cardDisplay class
+
+commit 42f4cc9ac5abe863968d0ba766c942dcddf15a19
+Author: Nicholas <Nicholas>
+Date:   Sun Feb 19 17:22:13 2017 -0500
+
+    Seems I forgot to add updated version of DiamondShape.java, which is responsible for the creation of the diamond card shape.
+
+commit 1bd3ebb55bc302396f933d22267be9a25ef45769
+Author: David Koval <kovald@union.edu>
+Date:   Sun Feb 19 17:21:50 2017 -0500
+
+    updated Carddisplay class
+
+commit 5f430974423e757d56f28585f9dde13ad921868f
+Author: Nicholas <Nicholas>
+Date:   Sun Feb 19 17:03:00 2017 -0500
+
+    Updated CardModel.java and DeckModel.java to create the cards and add them to the decks respectively.  Will still need to make adjustments accordingly.  The code for these files is meant to go into the Card.java and Deck.java but I was working on these before these .java files were removed and I didn't want to make changed over someone else's code yet while my repository is having issues, so I committed these separately.
+
+commit b01f7743140d64d655a3139d96c6d794473095ca
+Merge: 3ee22ec 9abb025
+Author: Nicholas <Nicholas>
+Date:   Sun Feb 19 16:48:29 2017 -0500
+
+    Trying to get repository to work for me again.
+
+commit 9abb025cfcf3d30a2502b1b1b92f38f872ffd9b5
+Author: David Koval <kovald@union.edu>
+Date:   Sun Feb 19 16:28:55 2017 -0500
+
+    fixed bugs in packages
+
+commit 3ee22ec57851d885d33bac380702c596c432e5e0
+Author: Nicholas <Nicholas>
+Date:   Sun Feb 19 03:00:09 2017 -0500
+
+    Updated ShapeFactory.java to paint the shapes for the card with the specific card requirements.  Still have to adjust the shape positions and might still need to create an overall card shape.
+
+commit 24c48c096b09b95a4ff7b4116475b734cbac1d0c
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Sat Feb 18 21:22:34 2017 -0500
+
+    Updated CmdBarFactory.java
+
+commit eb2814278df68bce005b9a0ded6028a08ea6912d
+Merge: dda7f39 b400fc6
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Sat Feb 18 20:38:33 2017 -0500
+
+    Updated commandBar.
+
+commit dda7f39b3489f0124ec2334371f0e5808008be50
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Sat Feb 18 20:35:03 2017 -0500
+
+    CmdBarFactory has been editted. CmdBarview, SolitairecmdbarListener, and TutorialCmdbarListener has been added.
+
+commit b400fc680ba74f9fa0a7d19ebc71f144b45bb2de
+Merge: 8604d96 a7adf6c
+Author: David Koval <kovald@union.edu>
+Date:   Sat Feb 18 20:28:12 2017 -0500
+
+    updates solitaire game class
+
+commit 8604d967c2d47de469a47fd1294e48184aca0c9d
+Merge: f5df119 35a38da
+Author: David Koval <kovald@union.edu>
+Date:   Sat Feb 18 20:14:30 2017 -0500
+
+    updated solit game class
+
+commit a7adf6cbba0cba33b6d75d27c88a2ae45d85af20
+Author: Nicholas <Nicholas>
+Date:   Sat Feb 18 20:13:17 2017 -0500
+
+    Commit
+
+commit d9a6cadd1da2630223dd1bd2e543e276dede5070
+Author: Nicholas <Nicholas>
+Date:   Sat Feb 18 20:04:39 2017 -0500
+
+    Re-adding Shape.java to get it to work again.
+
+commit f5df11928bf49fbc9c4160ee4f9b59db70091de9
+Author: David Koval <kovald@union.edu>
+Date:   Sat Feb 18 19:28:12 2017 -0500
+
+    saturday feb 18
+
+commit 35a38da72454b7aa0601eabf1ab73a9a6aadab92
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Sat Feb 18 19:03:13 2017 -0500
+
+    Command line deleted
+
+commit 88c159c50c5aee65d3802d4194991f55a865b770
+Author: David Koval <kovald@union.edu>
+Date:   Sat Feb 18 18:54:57 2017 -0500
+
+    minor change to tutorial command bar
+
+commit dc878ccec41c7d399ea4d94df48893f71714ade8
+Author: David Koval <kovald@union.edu>
+Date:   Sat Feb 18 18:47:38 2017 -0500
+
+    classes for command bar for two game modes (tutorial and solitaire)
+
+commit a3859eeb6bcd94b204c7f6d21fbab26690e11e10
+Author: David Koval <kovald@union.edu>
+Date:   Sat Feb 18 18:35:12 2017 -0500
+
+    delete dae test
+
+commit 44a0575c392aa24ce7dc1c0bdfa04c1e47a00901
+Author: Dae Kwang Lee <Dae Kwang Lee>
+Date:   Sat Feb 18 18:33:35 2017 -0500
+
+    Test package
+
+commit d458c1a0ffb274b94e9fe7bac9f41868ea4f931d
+Author: David Koval <kovald@union.edu>
+Date:   Sat Feb 18 17:08:39 2017 -0500
+
+    put classes into packages to make repo more clean
+
+commit c5163464949eddfaa63d0f07c133a28f56d6df9d
+Author: David Koval <kovald@union.edu>
+Date:   Sat Feb 18 17:00:14 2017 -0500
+
+    updated deck, card, game, and solitaire game classes
+
+commit 81784b1d0b4f9b0619627bd33ff97d9f25c02946
+Author: Nicholas <Nicholas>
+Date:   Sat Feb 18 16:01:16 2017 -0500
+
+    Updated DiamondShape.java to work exactly like SquareShape.java with exception of 'drawShape' rotating by 45 degrees.  Will update if needed as project progresses.
+
+commit a808e4918f11df4e85d2e205714154719766f706
+Author: Nicholas <Nicholas>
+Date:   Sat Feb 18 15:08:31 2017 -0500
+
+    Updated CircleShape.java using provided code from Ellipse.java from Project 1.  Will update accordingly as project progresses.
+
+commit cbb6549e7bd529de4e4800830027801de38c0e57
+Author: Nicholas <Nicholas>
+Date:   Sat Feb 18 14:59:01 2017 -0500
+
+    Updated SquareShape.java using Nicholas Van Nostrand's Rectangle code from Project 1.  Will check if anything needs altering as project progresses.
+
+commit 9d043469b9ec9d4ae0ff5f3ffc6a7e3912cc591d
+Author: Nicholas <Nicholas>
+Date:   Sat Feb 18 14:55:46 2017 -0500
+
+    Updated Shape.java using given Shape.java from previous project for abstract class.  Will check if it needs updating as project progresses.
+
+commit 07d97e10ce39fb6cfff840106e23c497519d16a7
+Merge: a4c532e 3889498
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Fri Feb 17 11:13:48 2017 -0500
+
+    merge new modified class names with old ones
+
+commit a4c532e910e2971c836fee77ed53d8a5722d1e7a
+Author: Yazan Barhoush <barhousy@union.edu>
+Date:   Fri Feb 17 11:06:00 2017 -0500
+
+    Create empty classes according to the class diagram
+
+commit 388949832b423936e106764e332688b2ad0a1b08
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 16 17:09:51 2017 -0500
+
+    abstact game class
+
+commit eba888c2c5fe40aaf87fd510fb88a30674d43b71
+Author: David Koval <kovald@union.edu>
+Date:   Thu Feb 16 16:53:36 2017 -0500
+
+    just starting sol game class
+
+commit 60a612ba74b8ffa97944f161fc2da110cf32ed2c
+Author: kovald <kovald@union.edu>
+Date:   Sun Jan 15 13:54:53 2017 -0500
+
+    Initial commit
