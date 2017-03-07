@@ -229,4 +229,13 @@ public class GameModel extends Observable {
     public String getPairCounter() {
         return Integer.toString(this.pairCounter);
     }
+
+    /**
+     * Return boolean stating that the game has ended if all pairs
+     * have been chosen.
+     * @return boolean for if the game has ended
+     */
+    public boolean endGame() {
+        return (pairCounter == (cardsOnTable.size() / 2));
+    }
 }
