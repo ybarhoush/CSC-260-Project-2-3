@@ -58,18 +58,15 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      * (the system must verify that the two cards really are a pair).
      */
     public static void removePair() {
-        if (gameModel.twoCardsSelected() && gameModel.isPair()) {
+        if ( gameModel.isPair()) {
                 pairCounter.setText(gameModel.getPairCounter());
                 //--implement >> toggle Highlight Color Green
                 gameModel.removePair();
-//                gameModel.clearSelectedCards();
+                turnOverCards();
 
-//            }
-//            else {
-//                //--implement >> toggle Highlight Color Red
-//                gameModel.clearSelectedCards();
-////                MemoryGameController.turnOverCards();
-//            }
+            }
+            else {
+                //--implement >> toggle Highlight Color Red
         }
     }
 
@@ -80,7 +77,6 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
         if(gameModel.twoCardsSelected()){
             turnCounter.setText(gameModel.getTurnCounter());
             gameModel.turnOverCards();
-//            gameModel.clearSelectedCards();
         }
     }
 }

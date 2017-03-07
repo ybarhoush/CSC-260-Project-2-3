@@ -47,6 +47,24 @@ public class CardView extends JPanel {
         }
     }
 
+    /**
+     * Change the color of background to green
+     */
+    public void changeBackgroundtoGreen() {
+        for (int i = 0; i < cardModel.getShapeNum(); i++) {
+            setBackground(Color.WHITE);
+        }
+    }
+
+    /**
+     * Change the color of background to red
+     */
+    public void changeBackgroundtoRed() {
+        for (int i = 0; i < cardModel.getShapeNum(); i++) {
+            setBackground(Color.WHITE);
+        }
+    }
+
 
     /**
      * Returns the card that is represented view.
