@@ -8,6 +8,9 @@ import java.util.Observable;
  * GameModel is the backbone of the game. Using the observer pattern
  * the gameModel is able to see how the gameView changes (user input)
  * and reacts appropriately with proper methods.
+ *
+ * Made by
+ * Edited by Nicholas Van Nostrand on 3/7/2017.
  */
 public class GameModel extends Observable {
 
