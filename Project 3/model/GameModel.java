@@ -159,9 +159,7 @@ public class GameModel extends Observable {
      * was selected was already chosen.
      * @return boolean stating if cards were already removed
      */
-    public boolean cardRemoved(CardModel card) {
-        return Arrays.asList(removedCards).contains(card);
-    }
+    public List<CardModel> cardsRemoved() {return this.removedCards;}
 
     /**
      * Returns the cards that are currently displayed to the player
