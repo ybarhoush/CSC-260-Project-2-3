@@ -48,7 +48,7 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      * @param cardModel the card that the user clicks
      */
     public void cardClicked(CardModel cardModel) {
-        if (!gameModel.twoCardsSelected()) {
+        if (!gameModel.twoCardsSelected() && !gameModel.getSelectedCards().contains(cardModel)) {
             gameModel.addCardToSelection(cardModel);
         }
     }
@@ -58,15 +58,13 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      * (the system must verify that the two cards really are a pair).
      */
     public static void removePair() {
-        gameModel.addPair();
-        pairCounter.setText(gameModel.getPairCounter());
-        if (gameModel.twoCardsSelected()) {
-            if (gameModel.isPair()) {
+        if (gameModel.twoCardsSelected() && gameModel.isPair()) {
+                pairCounter.setText(gameModel.getPairCounter());
                 //--implement >> toggle Highlight Color Green
                 gameModel.removePair();
 //                gameModel.clearSelectedCards();
 
-            }
+//            }
 //            else {
 //                //--implement >> toggle Highlight Color Red
 //                gameModel.clearSelectedCards();
@@ -79,9 +77,8 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      * Shows a hint by highlighting a set if a set exists amongst the displayed cards.
      */
     public static void turnOverCards() {
-        gameModel.addTurn();
-        turnCounter.setText(gameModel.getTurnCounter());
         if(gameModel.twoCardsSelected()){
+            turnCounter.setText(gameModel.getTurnCounter());
             gameModel.turnOverCards();
 //            gameModel.clearSelectedCards();
         }

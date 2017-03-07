@@ -50,7 +50,6 @@ public class Game extends JPanel {
         add(MemoryCmdbarView, BorderLayout.NORTH);
         }
 
-
     /**
      * Calls the controller to initialize a new game.
      */
