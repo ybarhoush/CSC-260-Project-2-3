@@ -20,6 +20,7 @@ public class EndGameView extends JPanel {
     private JPanel p1;
     private JLabel image;
     private Editor mainListener;
+    private int score;
     private JButton playAgain;
     private JButton exit;
     private JLabel currentScoreIndicator;
@@ -31,9 +32,10 @@ public class EndGameView extends JPanel {
      * Initiates GUI
      * @param mainListener
      */
-    public EndGameView(Editor mainListener, String fileName, String currentScore) {
+    public EndGameView(Editor mainListener, String fileName, int finalScore) {
         this.mainListener = mainListener;
         this.fileName = fileName;
+        this.score = finalScore;
 
         p1 = new JPanel();
         p1.setLayout(new BoxLayout(p1, BoxLayout.PAGE_AXIS));
@@ -44,7 +46,7 @@ public class EndGameView extends JPanel {
         p1.add(image);
 
         currentScoreIndicator = new JLabel(SCORE_LABEL);
-        currentScoreData = new JLabel();
+        currentScoreData = new JLabel(Integer.toString(score));
 
         JPanel p2 = new JPanel();
         GroupLayout layout = new GroupLayout(p2);
@@ -78,9 +80,9 @@ public class EndGameView extends JPanel {
         component.setAlignmentY(Component.CENTER_ALIGNMENT);
     }
 
-//    private String readTopTenScores(){
-//        WriteToFile addScore = new WriteToFile(fileName, Integer.toString(), true);
-//    }
+    //private String readTopTenScores(){
+    //    WriteToFile addScore = new WriteToFile(fileName, score, true);
+    //}
 
     /**
      * Enter button is pressed.
