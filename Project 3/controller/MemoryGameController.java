@@ -4,6 +4,7 @@ import commandbars.MemoryCmdbarView;
 import main.Editor;
 import model.CardModel;
 import model.GameModel;
+import view.EndGameView;
 import view.GameView;
 import view.GameViewListener;
 
@@ -87,6 +88,16 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
             gameModel.turnOverCards();
             turnCounter.setText(gameModel.getTurnCounter());
 
+        }
+    }
+
+    /**
+     * If the game is over after the number of pairs are collected, the
+     * game officially ends.
+     */
+    public void GameOver() {
+        if (gameModel.endGame()) {
+            EndGameView gameEnd = new EndGameView(mainListener, currentFileName, gameModel.getTurnCounter());
         }
     }
 }
