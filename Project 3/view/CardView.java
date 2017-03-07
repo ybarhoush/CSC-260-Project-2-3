@@ -21,6 +21,9 @@ public class CardView extends JPanel {
     private CardModel cardModel;
     private List<Shape> shapeViewList;
 
+    private Color highlightColor;
+    private Color defaultColor;
+
     /**
      * Creates a new set Card
      * @param cardModel CardModel data to display as view.
@@ -75,9 +78,31 @@ public class CardView extends JPanel {
     }
 
     private void toggleSelection() {
-        if (cardModel.isSelected() == false) {
+        if (cardModel.isSelected() == true) {
             setBorder(selectedBorder);
         }
     }
+
+//    /**
+//     * Highlights the specified CardView.
+//     * Call {@link #setHighlightColor(Color)} to set before calling.
+//     */
+//    public void highlight() {
+//        setBackground(highlightColor);
+//
+//        for (Shape shape: shapeViewList) {
+//            shape.setHighlightColor(highlightColor);
+//        }
+//    }
+//
+//    /**
+//     * Sets the highlight color of the CardView.
+//     *
+//     * @param highlightColor Color to highlight with.
+//     */
+//    public void setHighlightColor(Color highlightColor) {
+//        this.highlightColor = highlightColor;
+//    }
+
 }
 
