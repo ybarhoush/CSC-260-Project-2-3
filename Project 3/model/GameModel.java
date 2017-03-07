@@ -72,12 +72,23 @@ public class GameModel extends Observable{
                 }
         }
         addPair();
+        clearSelectedCards();
+        setChanged();
+        notifyObservers();
     }
 
     public void turnOverCards(){
         for (CardModel selectedCard : selectedCards) {
             selectedCard.isSelected();
+<<<<<<< HEAD
             this.turnCounter++;
+=======
+
+//            cardsOnTable.remove(selectedCard);
+
+
+
+>>>>>>> 1a60b64b13eba2da5ff8c4fcc73727b00571b409
         }
         addTurn();
         clearSelectedCards();
