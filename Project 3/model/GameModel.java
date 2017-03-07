@@ -78,7 +78,6 @@ public class GameModel extends Observable{
         for (CardModel selectedCard : selectedCards) {
             selectedCard.isSelected();
             this.turnCounter++;
-
         }
         addTurn();
         clearSelectedCards();
@@ -134,6 +133,7 @@ public class GameModel extends Observable{
      */
     public boolean twoCardsSelected() {
         return selectedCards.size() == PAIR_NUM;
+
     }
 
     /**
@@ -186,4 +186,8 @@ public class GameModel extends Observable{
 
     public void addPair(){this.pairCounter++;}
     public String getPairCounter(){return Integer.toString(this.pairCounter);}
+
+//    public List<CardModel> selectedPair() {
+//        return selectedCards;
+//    }
 }

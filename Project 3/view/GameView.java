@@ -27,6 +27,7 @@ public class GameView extends JPanel implements Observer {
     private Map<CardModel, CardView> cardViewMap;
     private GameViewListener controller;
     private boolean attachListeners;
+    private Random rand;
 
     /**
      * Creates a new GameView
@@ -104,4 +105,22 @@ public class GameView extends JPanel implements Observer {
             controller.cardClicked(cardView.getCardModel());
         }
     }
+
+//    /**
+//     * Highlights each individual set with a new random color.
+//     *
+//     * @param pair Single pair.
+//     */
+//    public void highlightPair(List<CardModel> pair) {
+//        Color color = Color.getColor("#0000FF");
+//
+//        for (int j = 0; j < GameModel.PAIR_NUM; j++) {
+//            System.out.print(GameModel.PAIR_NUM);
+//            CardModel model = pair.get(j);
+//            CardView view = cardViewMap.get(model);
+//
+//            view.setHighlightColor(color);
+//            view.highlight();
+//        }
+//    }
 }

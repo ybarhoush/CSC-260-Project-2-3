@@ -7,6 +7,8 @@ import model.GameModel;
 import view.GameView;
 import view.GameViewListener;
 
+import java.util.List;
+
 /**
  * MemoryGameController.java
  * Represents the controls of the game screen of the Memory mode.
@@ -59,9 +61,11 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      */
     public static void removePair() {
         if ( gameModel.isPair()) {
+                List<CardModel> pair = gameModel.selectedPair();
                 pairCounter.setText(gameModel.getPairCounter());
                 //--implement >> toggle Highlight Color Green
                 gameModel.removePair();
+                //gameView.highlightPair(pair);
                 turnOverCards();
 
             }
