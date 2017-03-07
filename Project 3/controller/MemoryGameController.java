@@ -13,6 +13,9 @@ import view.GameViewListener;
  * Represents the controls of the game screen of the Memory mode.
  * This class holds the view and the model together and allows communication
  * between the data and what the user sees.
+ *
+ * Made by
+ * Edited by Nicholas Van Nostrand on 3/7/2017.
  */
 
 public class MemoryGameController extends MemoryCmdbarView implements GameViewListener {
@@ -97,7 +100,7 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      */
     public void GameOver() {
         if (gameModel.endGame()) {
-            EndGameView gameEnd = new EndGameView(mainListener, currentFileName, gameModel.getTurnCounter());
+            mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getTurnCounter()));
         }
     }
 }
