@@ -62,7 +62,8 @@ public class GameModel extends Observable {
 
     /**
      * If the two cards that the user selects are a pair,
-     * this method keeps those cards facing up.
+     * this method keeps those cards facing up.  The pair
+     * counter also increments by one.
      */
     public void removePair() {
         for (CardModel selectedCard : selectedCards) {
@@ -79,6 +80,10 @@ public class GameModel extends Observable {
         notifyObservers();
     }
 
+    /**
+     *Turns over selected cards to show card designs.  Also
+     * increments the turn counter.
+     */
     public void turnOverCards() {
             for (CardModel selectedCard : selectedCards) {
                 selectedCard.isSelected();
@@ -195,18 +200,32 @@ public class GameModel extends Observable {
         notifyObservers();
     }
 
+    /**
+     * Increments turn counter.
+     */
     public void addTurn() {
         this.turnCounter++;
     }
 
+    /**
+     * Returns the turn counter number in string form.
+     * @return String of turn counter
+     */
     public String getTurnCounter() {
         return Integer.toString(this.turnCounter);
     }
 
+    /**
+     * Increments pair counter.
+     */
     public void addPair() {
         this.pairCounter++;
     }
 
+    /**
+     * Returns the pair counter number in string form.
+     * @return String of pair counter
+     */
     public String getPairCounter() {
         return Integer.toString(this.pairCounter);
     }
