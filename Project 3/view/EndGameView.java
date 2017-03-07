@@ -17,6 +17,7 @@ public class EndGameView extends JPanel {
     private static final String TOP_TEN_SCORES_LABEL = "Your Top Ten Scores";
 
     private String fileName;
+    private ReadFromFile readFile;
     private JPanel p1;
     private JLabel image;
     private Editor mainListener;
@@ -54,7 +55,12 @@ public class EndGameView extends JPanel {
         p1.add(p2);
 
         topTenScoresIndicator = new JLabel(TOP_TEN_SCORES_LABEL);
-        topTenScoresData = new JLabel();
+        readFile = new ReadFromFile(fileName);
+        StringBuilder listTenString = new StringBuilder();
+        for (String scoreString: readFile.returnLine()) {
+            listTenString.append(scoreString + " ");
+        }
+        topTenScoresData = new JLabel(listTenString.toString());
 
         JPanel p3 = new JPanel();
         GroupLayout layout1 = new GroupLayout(p3);
