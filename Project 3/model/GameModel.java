@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Observable;
 
@@ -20,6 +21,7 @@ public class GameModel extends Observable {
     private DeckModel deck;
     private List<CardModel> cardsOnTable;
     private List<CardModel> selectedCards;
+    private List<CardModel> removedCards;
     private int turnCounter;
     private int pairCounter;
     private boolean isPlaying;
@@ -31,6 +33,7 @@ public class GameModel extends Observable {
     public GameModel() {
         this.cardsOnTable = new ArrayList<>(CARDS_ON_TABLE);
         this.selectedCards = new ArrayList<>(PAIR_NUM);
+        this.removedCards = new ArrayList<>(CARDS_ON_TABLE);
     }
 
     /**
@@ -43,6 +46,7 @@ public class GameModel extends Observable {
         this.isPlaying = true;
         this.cardsOnTable.clear();
         this.selectedCards.clear();
+        this.removedCards.clear();
         this.deck.shuffle();
         dealSeventyTwo();
         this.turnCounter = 0;
@@ -71,12 +75,8 @@ public class GameModel extends Observable {
     public void removePair() {
         for (CardModel selectedCard : selectedCards) {
             selectedCard.unSelect();
-
-            //       if (this.pairCounter == 36){
-
-            //   }
+            removedCards.add(selectedCard);
         }
-
         addPair();
         clearSelectedCards();
         setChanged();
@@ -90,9 +90,6 @@ public class GameModel extends Observable {
     public void turnOverCards() {
             for (CardModel selectedCard : selectedCards) {
                 selectedCard.isSelected();
-
-//            cardsOnTable.remove(selectedCard);
-
             }
             addTurn();
             clearSelectedCards();
@@ -155,6 +152,15 @@ public class GameModel extends Observable {
      */
     public boolean twoCardsSelected() {
         return selectedCards.size() == PAIR_NUM;
+    }
+
+    /**
+     * Returns boolean that states whether or not the card that
+     * was selected was already chosen.
+     * @return boolean stating if cards were already removed
+     */
+    public boolean cardRemoved(CardModel card) {
+        return Arrays.asList(removedCards).contains(card);
     }
 
     /**
