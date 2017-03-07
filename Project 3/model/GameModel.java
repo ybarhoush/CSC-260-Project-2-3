@@ -78,6 +78,7 @@ public class GameModel extends Observable {
             removedCards.add(selectedCard);
         }
         addPair();
+        addTurn();
         clearSelectedCards();
         setChanged();
         notifyObservers();
