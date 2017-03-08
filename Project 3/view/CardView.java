@@ -76,5 +76,18 @@ public class CardView extends JPanel {
             setBorder(selectedBorder);
         }
     }
+
+    public void greenBackground() {
+        if (cardModel.isSelected() == true && getBackground() == Color.white) {
+            setBackground(Color.green);
+        }
+    }
+
+    public void redBackground() {
+        if (cardModel.isSelected() == true && getBackground() == Color.white) {
+            setBackground(Color.red);
+        }
+    }
+
 }
 
