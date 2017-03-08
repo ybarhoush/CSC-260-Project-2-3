@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Observable;
 
@@ -74,6 +73,7 @@ public class GameModel extends Observable {
      */
     public void removePair() {
         for (CardModel selectedCard : selectedCards) {
+            selectedCard.setShapeNum(0);
             selectedCard.unSelect();
             removedCards.add(selectedCard);
         }

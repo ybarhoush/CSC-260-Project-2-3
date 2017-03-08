@@ -1,15 +1,12 @@
 package model;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.net.URL;
-import java.util.Objects;
-import javax.imageio.ImageIO;
 /**
  *
  * This class is a card model.
  */
 public class CardModel {
+
 
     /** All the shades that can be displayed on a card */
     public enum Shade {SOLID, OPEN}
@@ -20,7 +17,7 @@ public class CardModel {
     private int shapeNum;       //number of shapes on a card
     private Shape shape;        //shape on the card
     private Shade shade;        //shade on the shapes on the card
-    private Color color;        //color of shapes on card
+    private Color color;        //color of shapes on cardz
     private boolean isSelected; //if card is selected by player
     /**
      * Creates a new cardModel given a number that will represent
