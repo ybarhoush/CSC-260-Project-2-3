@@ -16,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="EndGameView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EndGameView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/EndGameView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
-              <caret line="116" column="23" lean-forward="false" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="23" />
+            <state relative-caret-position="468">
+              <caret line="81" column="21" lean-forward="true" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
               <folding>
                 <element signature="e#3960#3961#0" expanded="true" />
               </folding>
@@ -70,18 +70,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/GameView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2567#2568#0" expanded="false" />
-                <element signature="e#2611#2612#0" expanded="false" />
-                <element signature="e#2853#2854#0" expanded="false" />
-                <element signature="e#2913#2914#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="140">
+              <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,6 +171,7 @@
         <option value="$PROJECT_DIR$/controller/MemoryGameController.java" />
         <option value="$PROJECT_DIR$/view/CardView.java" />
         <option value="$PROJECT_DIR$/view/EndGameView.java" />
+        <option value="$PROJECT_DIR$/view/GameView.java" />
       </list>
     </option>
   </component>
@@ -609,12 +604,12 @@
       <workItem from="1488851988577" duration="2549000" />
       <workItem from="1488855955094" duration="571000" />
       <workItem from="1488933407923" duration="6000" />
-      <workItem from="1488933456443" duration="662000" />
+      <workItem from="1488933456443" duration="839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4856000" />
+    <option name="totallyTimeSpent" value="5033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -671,13 +666,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2567#2568#0" expanded="false" />
-            <element signature="e#2611#2612#0" expanded="false" />
-            <element signature="e#2853#2854#0" expanded="false" />
-            <element signature="e#2913#2914#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,20 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/GameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2567#2568#0" expanded="false" />
-            <element signature="e#2611#2612#0" expanded="false" />
-            <element signature="e#2853#2854#0" expanded="false" />
-            <element signature="e#2913#2914#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/GameModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3168">
@@ -1165,11 +1140,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/EndGameView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="116" column="23" lean-forward="false" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="23" />
+        <state relative-caret-position="468">
+          <caret line="81" column="21" lean-forward="true" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
           <folding>
             <element signature="e#3960#3961#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/GameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
