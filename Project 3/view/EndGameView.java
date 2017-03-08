@@ -10,6 +10,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * EndGameView.java
+ * Represents the screen that indicates the end of a game. The user sees
+ * the gameover screen after he or she finds 36 pairs.
+ */
 public class EndGameView extends JPanel {
     private static final String EXIT_BUTTON = "Exit";
     private static final String PLAY_AGAIN_BUTTON = "PLAY AGAIN!";
@@ -30,8 +35,9 @@ public class EndGameView extends JPanel {
     private JLabel topTenScoresData;
 
     /**
-     * Initiates GUI
-     * @param mainListener
+     * Initiates GUI.
+     *
+     * @param mainListener Editor object
      */
     public EndGameView(Editor mainListener, String fileName, int finalScore) {
         this.mainListener = mainListener;
@@ -41,11 +47,12 @@ public class EndGameView extends JPanel {
         p1 = new JPanel();
         p1.setLayout(new BoxLayout(p1, BoxLayout.PAGE_AXIS));
 
-        // top image
+        // top image of the screen
         image = new JLabel(new ImageIcon("Images/GameOver.png"));
         setCenterAlignment(image);
         p1.add(image);
 
+        // Sets the JLabel for the user's game score
         currentScoreIndicator = new JLabel(SCORE_LABEL);
         currentScoreData = new JLabel(Integer.toString(score));
 
@@ -54,10 +61,11 @@ public class EndGameView extends JPanel {
         layout.setHorizontalGroup(layout.createSequentialGroup().addComponent(currentScoreIndicator).addComponent(currentScoreData));
         p1.add(p2);
 
+        // Sets the JLabel for the user's top ten game scores
         topTenScoresIndicator = new JLabel(TOP_TEN_SCORES_LABEL);
         readFile = new ReadFromFile(fileName);
         StringBuilder listTenString = new StringBuilder();
-        for (String scoreString: readFile.returnLine()) {
+        for (String scoreString : readFile.returnLine()) {
             listTenString.append(scoreString + " ");
         }
         topTenScoresData = new JLabel(listTenString.toString());
@@ -67,13 +75,13 @@ public class EndGameView extends JPanel {
         layout.setHorizontalGroup(layout1.createSequentialGroup().addComponent(topTenScoresIndicator).addComponent(topTenScoresData));
         p1.add(p3);
 
-        //exit button
+        // Adds an exit button
         exit = new JButton(EXIT_BUTTON);
         setCenterAlignment(exit);
         exit.addActionListener(new ExitButtonListener());
         p1.add(exit);
 
-        //playAgain button
+        //Adds playAgain button
         playAgain = new JButton(PLAY_AGAIN_BUTTON);
         setCenterAlignment(playAgain);
         playAgain.addActionListener(new PlayAgainButtonListener());
@@ -81,6 +89,12 @@ public class EndGameView extends JPanel {
 
         add(p1);
     }
+
+    /**
+     * Aligns the component object to the designated X and Y coordinates.
+     *
+     * @param component
+     */
     private void setCenterAlignment(JComponent component) {
         component.setAlignmentX(Component.CENTER_ALIGNMENT);
         component.setAlignmentY(Component.CENTER_ALIGNMENT);
@@ -91,7 +105,7 @@ public class EndGameView extends JPanel {
     //}
 
     /**
-     * Enter button is pressed.
+     * What to do when Enter button is pressed.
      */
     private class ExitButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -100,10 +114,10 @@ public class EndGameView extends JPanel {
     }
 
     /**
-     * Play again is pressed.
+     * What to do when Play again is pressed.
      */
-    private class PlayAgainButtonListener implements ActionListener{
-        public void actionPerformed(ActionEvent e){
+    private class PlayAgainButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
             mainListener.goToGame(Editor.GameMode.Memory, fileName);
         }
     }
