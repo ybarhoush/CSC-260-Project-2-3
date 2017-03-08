@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * View that displays a card.
+ * CardView.java
+ * Represents a card that the user sees on the game screen.
  */
 public class CardView extends JPanel {
 
@@ -22,7 +23,8 @@ public class CardView extends JPanel {
     private List<Shape> shapeViewList;
 
     /**
-     * Creates a new set Card
+     * Creates a new set of cards.
+     *
      * @param cardModel CardModel data to display as view.
      */
     public CardView(CardModel cardModel) {
@@ -48,7 +50,7 @@ public class CardView extends JPanel {
     }
 
     /**
-     * Change the color of background to green
+     * Sets the color of the face of a card to white.
      */
     public void changeBackgroundtoGreen() {
         for (int i = 0; i < cardModel.getShapeNum(); i++) {
@@ -57,23 +59,18 @@ public class CardView extends JPanel {
     }
 
     /**
-     * Change the color of background to red
-     */
-    public void changeBackgroundtoRed() {
-        for (int i = 0; i < cardModel.getShapeNum(); i++) {
-            setBackground(Color.WHITE);
-        }
-    }
-
-
-    /**
-     * Returns the card that is represented view.
+     * Getter method for a card.
+     *
      * @return cardModel
      */
     public CardModel getCardModel() {
         return cardModel;
     }
 
+    /**
+     * Sets the border of the face of a card object with a strokeBorder
+     * when it is not selected by the user.
+     */
     private void toggleSelection() {
         if (cardModel.isSelected() == false) {
             setBorder(selectedBorder);
