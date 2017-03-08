@@ -20,8 +20,7 @@ public class DeckModel {
      */
     public DeckModel(){
         this.deck = new ArrayList<>(DECK_LENGTH);
-        createHalfDeck();
-//        duplicateDeck();
+        createDeck();
         this.index = DECK_LENGTH - 1;
     }
 
@@ -33,20 +32,11 @@ public class DeckModel {
     }
 
     /**
-     * This method duplicates 36 unique cards to ensure that
-     * each card only has one duplicate (together they form a pair).
-     */
-    private void duplicateDeck(){
-        createHalfDeck();
-        for (int j = 0; j < 36; j++){
-            this.deck.add(36+j, this.deck.get(j));
-        }
-    }
-
-    /**
      * This method produces 36 unique cards (no two cards are a pair).
+     * Then it duplicates 36 unique cards to ensure that each card only
+     * has one duplicate (together they form a pair).
      */
-    private void createHalfDeck(){
+    private void createDeck(){
         Color[] colors = new Color[]{Color.orange, Color.magenta, Color.blue};
         for (int r = 0; r < 2; r++){
             int i = 0;

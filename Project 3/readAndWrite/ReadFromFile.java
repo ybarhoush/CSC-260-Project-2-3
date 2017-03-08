@@ -6,25 +6,33 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by David on 3/4/17.
+ * Given a file name. This class will read all and return the
+ * data written in the given file name in the Players package
  */
 public class ReadFromFile {
     private String  fileName;
-    private ArrayList<String > lines;
+    private ArrayList<String > strings;
 
+    /**
+     * @param fileName file to be read from
+     */
     public ReadFromFile(String fileName) {
         this.fileName = "Players/" + fileName;
-        this.lines = new ArrayList<>();
+        this.strings = new ArrayList<>();
     }
 
-    public ArrayList<String> returnLine(){
+    /**
+     * List of strings, each string is data from one line in the txt file
+     * @return array list, each line is an element
+     */
+    public ArrayList<String> returnStrings(){
         try {
             FileReader fr = new FileReader(this.fileName);
             BufferedReader br = new BufferedReader(fr);
 
             String str;
             while ((str = br.readLine()) != null) {
-                lines.add(str);
+                strings.add(str);
             }
 
             br.close();
@@ -32,6 +40,6 @@ public class ReadFromFile {
         } catch (IOException e) {
             System.out.println("File not found");
         }
-        return lines;
+        return strings;
     }
 }

@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * EndGameView.java
@@ -19,10 +20,10 @@ public class EndGameView extends JPanel {
     private static final String EXIT_BUTTON = "Exit";
     private static final String PLAY_AGAIN_BUTTON = "PLAY AGAIN!";
     private static final String SCORE_LABEL = "Score:";
-    private static final String TOP_TEN_SCORES_LABEL = "Your Top Ten Scores";
+    private static final String TOP_TEN_SCORES_LABEL = "Your Top Ten Scores:";
 
     private String fileName;
-    private ReadFromFile readFile;
+    private String topTenScores;
     private JPanel p1;
     private JLabel image;
     private Editor mainListener;
@@ -53,6 +54,7 @@ public class EndGameView extends JPanel {
         p1.add(image);
 
         // Sets the JLabel for the user's game score
+        addCurrentScore();
         currentScoreIndicator = new JLabel(SCORE_LABEL);
         currentScoreData = new JLabel(Integer.toString(score));
 
@@ -62,13 +64,9 @@ public class EndGameView extends JPanel {
         p1.add(p2);
 
         // Sets the JLabel for the user's top ten game scores
+        topTenScores = allScoresFromBestToWorst();
         topTenScoresIndicator = new JLabel(TOP_TEN_SCORES_LABEL);
-        readFile = new ReadFromFile(fileName);
-        StringBuilder listTenString = new StringBuilder();
-        for (String scoreString : readFile.returnLine()) {
-            listTenString.append(scoreString + " ");
-        }
-        topTenScoresData = new JLabel(listTenString.toString());
+        topTenScoresData = new JLabel(topTenScores);
 
         JPanel p3 = new JPanel();
         GroupLayout layout1 = new GroupLayout(p3);
@@ -100,9 +98,69 @@ public class EndGameView extends JPanel {
         component.setAlignmentY(Component.CENTER_ALIGNMENT);
     }
 
-    //private String readTopTenScores(){
-    //    WriteToFile addScore = new WriteToFile(fileName, score, true);
-    //}
+    /**
+     * Adds player's most recent score to data sheet
+     */
+    private void addCurrentScore(){
+        WriteToFile addScore = new WriteToFile(fileName, Integer.toString(this.score),true);
+    }
+
+    /**
+     * Reads the user's data file, turns the strings into integers, then sorts the
+     * scores from lowest to highest, then cuts down the array to make sure only the
+     * top ten scores are displayed.
+     * @return string with only top ten scores
+     */
+    private String allScoresFromBestToWorst(){
+        ArrayList<String> scoreStrings;
+        ArrayList<Integer> scoreInts = new ArrayList<Integer>();
+        ReadFromFile readScores = new ReadFromFile(fileName);
+        scoreStrings = readScores.returnStrings();
+
+        for(String item : scoreStrings){
+            scoreInts.add(Integer.parseInt(item.replace("[^0-9]", "")));
+        }
+        scoreInts = removeDuplicates(scoreInts);
+        Collections.sort(scoreInts);
+        if (scoreInts.size() > 10){
+            scoreInts = makeTen(scoreInts);
+        }
+        String topTenScores = "";
+        for (Integer score : scoreInts){
+            topTenScores += score + " ";
+        }
+        return topTenScores.toString();
+    }
+
+    /**
+     * Makes an array to length ten
+     * @param list to shorten
+     * @return list with 10 elements
+     */
+    private ArrayList<Integer> makeTen(ArrayList<Integer> list){
+        for (int i = 0; i < list.size() - 10; i++){
+            list.remove(11+i);
+        }
+        return list;
+    }
+
+    /**
+     * Removes all duplicates in a given list
+     * @param list list to remove duplicates from
+     * @return list with no duplicates
+     */
+    private ArrayList<Integer> removeDuplicates(ArrayList<Integer> list) {
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (list.get(i).equals(list.get(j))) {
+                    list.remove(j--);
+                    size--;
+                }
+            }
+        }
+        return list;
+    }
 
     /**
      * What to do when Enter button is pressed.
