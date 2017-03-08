@@ -138,10 +138,11 @@ public class EndGameView extends JPanel {
      * @return list with 10 elements
      */
     private ArrayList<Integer> makeTen(ArrayList<Integer> list){
-        for (int i = 0; i < list.size() - 10; i++){
-            list.remove(11+i);
+        ArrayList<Integer> subList = new ArrayList<>(10);
+        for (int i = 0; i < 10; i++){
+            subList.add(list.get(i));
         }
-        return list;
+        return subList;
     }
 
     /**
