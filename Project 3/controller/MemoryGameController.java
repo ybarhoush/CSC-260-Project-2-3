@@ -4,7 +4,6 @@ import commandbars.MemoryCmdbarView;
 import main.Editor;
 import model.CardModel;
 import model.GameModel;
-import view.EndGameView;
 import view.GameView;
 import view.GameViewListener;
 
@@ -75,12 +74,9 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
             gameModel.removePair();
             pairCounter.setText(gameModel.getPairCounter());
             turnCounter.setText(gameModel.getTurnCounter());
-
-            //--implement >> toggle Highlight Color Green
-
-
+            gameView.greenBackground();
         } else {
-            //--implement >> toggle Highlight Color Red
+            gameView.redBackground();
         }
     }
 
