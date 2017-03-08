@@ -72,7 +72,7 @@ public class CardView extends JPanel {
      * when it is not selected by the user.
      */
     private void toggleSelection() {
-        if (cardModel.isSelected() == true) {
+        if (cardModel.isSelected() == false) {
             setBorder(selectedBorder);
         }
     }
