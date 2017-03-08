@@ -16,8 +16,13 @@ import java.util.List;
  */
 public class CardView extends JPanel {
 
-    private static final Border nullBorder = BorderFactory.createEmptyBorder();
-    private static final Border selectedBorder = BorderFactory.createStrokeBorder(new BasicStroke(50.0f));
+    private static final Border raisedbevel = BorderFactory.createRaisedBevelBorder();
+
+    private static JLabel image;
+    private static ImageIcon icon = new ImageIcon("Images/index.jpg");
+    //private static final Border loweredbevel = BorderFactory.createMatteBorder(0, 50, 50, 0, icon );
+    //private static final Border selectedBorder = BorderFactory.createCompoundBorder(raisedbevel, loweredbevel);
+
 
     private CardModel cardModel;
     private List<Shape> shapeViewList;
@@ -49,14 +54,6 @@ public class CardView extends JPanel {
         }
     }
 
-    /**
-     * Sets the color of the face of a card to white.
-     */
-    public void changeBackgroundtoGreen() {
-        for (int i = 0; i < cardModel.getShapeNum(); i++) {
-            setBackground(Color.WHITE);
-        }
-    }
 
     /**
      * Getter method for a card.
@@ -73,18 +70,21 @@ public class CardView extends JPanel {
      */
     private void toggleSelection() {
         if (cardModel.isSelected() == false) {
-            setBorder(selectedBorder);
+            //setBorder(loweredbevel);
+            image = new JLabel(new ImageIcon("Images/index.jpg"));
+            add(image, "Center");
+
         }
     }
 
     public void greenBackground() {
-        if (cardModel.isSelected() == true && getBackground() == Color.white) {
+        if (cardModel.isSelected() == true && cardModel.getShapeNum() != 0) {
             setBackground(Color.green);
         }
     }
 
     public void redBackground() {
-        if (cardModel.isSelected() == true && getBackground() == Color.white) {
+        if (cardModel.isSelected() == true && cardModel.getShapeNum() != 0) {
             setBackground(Color.red);
         }
     }
