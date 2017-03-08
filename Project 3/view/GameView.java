@@ -110,4 +110,16 @@ public class GameView extends JPanel implements Observer {
             controller.cardClicked(cardView.getCardModel());
         }
     }
+
+    public void greenBackground() {
+        for (CardView cardView : cardViewMap.values()) {
+            cardView.greenBackground();
+        }
+    }
+
+    public void redBackground() {
+        for (CardView cardView : cardViewMap.values()) {
+            cardView.redBackground();
+        }
+    }
 }

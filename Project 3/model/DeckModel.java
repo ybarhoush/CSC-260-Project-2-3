@@ -1,9 +1,8 @@
 package model;
 
-import javax.smartcardio.Card;
-import java.util.Collections;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * This class creates a deck of cards which will be used
@@ -48,7 +47,7 @@ public class DeckModel {
      * This method produces 36 unique cards (no two cards are a pair).
      */
     private void createHalfDeck(){
-        Color[] colors = new Color[]{Color.red, Color.green, Color.blue};
+        Color[] colors = new Color[]{Color.orange, Color.magenta, Color.blue};
         for (int r = 0; r < 2; r++){
             int i = 0;
             for (int number = 1; number <= 2; number++){
