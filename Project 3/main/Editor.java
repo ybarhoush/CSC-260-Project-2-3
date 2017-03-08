@@ -15,9 +15,8 @@ import java.awt.*;
 public class Editor {
 
     private JFrame frame;
-    private static final int FRAME_WIDTH = 700, FRAME_HEIGHT = 700;
+    private static final int FRAME_WIDTH = 1200, FRAME_HEIGHT = 900;
     private static final String USER_ID_TITLE = "User ID";
-//    private static final String MENU_FRAME_TITLE = "Game of Set";
     private static final String MEMORY_FRAME_TITLE = "Memory Mode";
     private static final String END_OF_GAME_FRAME_TITLE = "Game Over";
 
@@ -51,7 +50,7 @@ public class Editor {
     private void displayGUI() {
         frame = new JFrame(USER_ID_TITLE);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         goToUserID();
         frame.pack();
         frame.setVisible(true);
@@ -71,19 +70,8 @@ public class Editor {
     }
 
     /**
-     * Based on the screen that this user is in, this method
-     * returns the proper title for that frame.
-     *
-     * @param mode
-     * @return title
+     * Screen that prompts player for and ID
      */
-    private String getFrameTitle(GameMode mode) {
-//        if (mode == GameMode.Memory) {
-            return MEMORY_FRAME_TITLE;
-//        }
-//        return MENU_FRAME_TITLE;
-    }
-
     public void goToUserID(){
         if (!(getContentPane() instanceof UserID)) {
             UserID userID = new UserID(this);
@@ -92,6 +80,11 @@ public class Editor {
         }
     }
 
+    /**
+     * Displays score to player at the end of a game and allows user to exit or play again.
+     * @param fileName file to which to write score to
+     * @param currentScore score for the most recent game
+     */
     public void goToEndGameView(String fileName, int currentScore){
         if (!(getContentPane() instanceof EndGameView)) {
             EndGameView endGameView = new EndGameView(this, fileName, currentScore);
@@ -108,7 +101,7 @@ public class Editor {
     public void goToGame(GameMode mode, String fileName) {
         if (!(getContentPane() instanceof Game)) {
             Game game = new Game(this, mode, fileName);
-            frame.setTitle(getFrameTitle(mode));
+            frame.setTitle(MEMORY_FRAME_TITLE);
             updateContentPane(game);
             game.newMemoryGame();
         }

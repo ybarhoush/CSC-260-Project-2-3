@@ -31,7 +31,7 @@ public class GameModelTest {
 //    public void testReader(){
 //        System.out.println("Test if reader can read properly \n --------------");
 //        ReadFromFile checkIfPlayerExists = new ReadFromFile("Players/AllPlayers.txt");
-//        ArrayList<String> allPlayers = checkIfPlayerExists.returnLine();
+//        ArrayList<String> allPlayers = checkIfPlayerExists.returnStrings();
 //        assertEquals("the method works", true, allPlayers.contains("896"));
 //
 //    }

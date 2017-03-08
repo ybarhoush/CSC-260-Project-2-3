@@ -59,8 +59,8 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
 
         if (!gameModel.twoCardsSelected() && !gameModel.getSelectedCards().contains(cardModel) && !gameModel.cardsRemoved().contains(cardModel)) {
             gameModel.addCardToSelection(cardModel);
-            if (gameModel.endGame()) {
-                mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getPairCounter()));
+            if (gameModel.endGame() && gameModel.twoCardsSelected()) {
+                mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getTurnCounter()));
             }
         }
     }

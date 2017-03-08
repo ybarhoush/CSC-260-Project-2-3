@@ -244,6 +244,6 @@ public class GameModel extends Observable {
      * @return boolean for if the game has ended
      */
     public boolean endGame() {
-        return (pairCounter == (cardsOnTable.size() / 2));
+        return (pairCounter == (CARDS_ON_TABLE / 2) - 1);
     }
 }

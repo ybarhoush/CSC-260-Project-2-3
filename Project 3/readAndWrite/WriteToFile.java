@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by David on 3/4/17.
+ * Given a file name. This class will write to an existing txt file or
+ * create a new one if the given file name doesn't exist and write to there.
  */
 public class WriteToFile {
 
