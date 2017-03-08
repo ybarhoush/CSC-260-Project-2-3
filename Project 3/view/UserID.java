@@ -11,11 +11,12 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
- * This class is the first window that the user sees when running the program.
- * This prompts the player with a window that requires the user to enter an
- * id to continue.
+ * UserID.java
+ * Represents the first window that the user sees when running the program.
+ * It prompts the player with a window that requires the user to enter an
+ * ID to continue.
  */
-public class UserID extends JPanel{
+public class UserID extends JPanel {
     private static final String ENTER_BUTTON = "Enter";
     private static final String USER_ID = "Enter Your Three Letter User ID:";
     private static final String ALL_PLAYERS = "AllPlayers.txt";
@@ -30,6 +31,7 @@ public class UserID extends JPanel{
 
     /**
      * Initiates GUI
+     *
      * @param mainListener
      */
     public UserID(Editor mainListener) {
@@ -69,34 +71,43 @@ public class UserID extends JPanel{
 
         add(p1);
     }
+
+    /**
+     * Aligns the component object to the designated X and Y coordinates.
+     *
+     * @param component
+     */
     private void setCenterAlignment(JComponent component) {
         component.setAlignmentX(Component.CENTER_ALIGNMENT);
         component.setAlignmentY(Component.CENTER_ALIGNMENT);
     }
 
     /**
-     * Enter button is pressed.
+     * What to do when the enter button is pressed.
      */
     private class EnterButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            if (threeDigitID.getText().length() == 3){
-                if (!userExists()){
+            if (threeDigitID.getText().length() == 3) {
+                if (!userExists()) {
                     WriteToFile addPlayer = new WriteToFile(ALL_PLAYERS, threeDigitID.getText(), true);
                     WriteToFile newText = new WriteToFile(threeDigitID.getText() + ".txt", "", false);
                 }
                 mainListener.goToGame(Editor.GameMode.Memory, threeDigitID.getText() + ".txt");
-            }
-            else {
+            } else {
                 JOptionPane.showMessageDialog(null, "Please Enter three characters for your ID to continue to game.");
             }
         }
     }
 
-
-    private boolean userExists(){
+    /**
+     * Returns true if the user has entered three letters for his / her ID
+     *
+     * @return true or false
+     */
+    private boolean userExists() {
         ReadFromFile checkIfPlayerExists = new ReadFromFile(ALL_PLAYERS);
         ArrayList<String> allPlayers = checkIfPlayerExists.returnLine();
-        if (allPlayers.contains(threeDigitID.getText())){
+        if (allPlayers.contains(threeDigitID.getText())) {
             return true;
         }
         return false;
