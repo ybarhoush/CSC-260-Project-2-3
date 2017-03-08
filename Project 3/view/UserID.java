@@ -106,7 +106,7 @@ public class UserID extends JPanel {
      */
     private boolean userExists() {
         ReadFromFile checkIfPlayerExists = new ReadFromFile(ALL_PLAYERS);
-        ArrayList<String> allPlayers = checkIfPlayerExists.returnLine();
+        ArrayList<String> allPlayers = checkIfPlayerExists.returnStrings();
         if (allPlayers.contains(threeDigitID.getText())) {
             return true;
         }
