@@ -12,7 +12,8 @@ import java.util.*;
 import java.util.List;
 
 /**
- * This class is what the player will see in terms of the cards
+ * GameView.java
+ * Represents the game screen that the player sees in terms of the cards
  * being displayed and what they are able to select.
  */
 public class GameView extends JPanel implements Observer {
@@ -30,6 +31,7 @@ public class GameView extends JPanel implements Observer {
 
     /**
      * Creates a new GameView
+     *
      * @param gameModel GameModel to initialize from
      */
     public GameView(GameModel gameModel) {
@@ -46,7 +48,8 @@ public class GameView extends JPanel implements Observer {
 
     /**
      * Updates the cards being displayed to the player.
-     * @param cardModels
+     *
+     * @param cardModels list of Card objects
      */
     private void updateCardViews(List<CardModel> cardModels) {
         removeAll();
@@ -68,7 +71,8 @@ public class GameView extends JPanel implements Observer {
 
     /**
      * Listens to the clicks of the player to see if a card is selected.
-     * @param view
+     *
+     * @param view CardView object
      */
     private void attachClickListeners(CardView view) {
         if (attachListeners) {
@@ -78,6 +82,7 @@ public class GameView extends JPanel implements Observer {
 
     /**
      * Attaches the proper controller to the gameView
+     *
      * @param controller controller to attach.
      */
     public void attachListener(GameViewListener controller) {
@@ -87,7 +92,8 @@ public class GameView extends JPanel implements Observer {
     /**
      * Called automatically when the parent Observer object notifies its
      * observers.
-     * @param o Observable object
+     *
+     * @param o   Observable object
      * @param arg Arguments from the observable.
      */
     public void update(Observable o, Object arg) {
