@@ -67,7 +67,7 @@ public class CardView extends JPanel {
     private void toggleSelection() {
         if (cardModel.isSelected() == false) {
 
-            image = new JLabel(new ImageIcon("Images/card5.gif"));
+            image = new JLabel(new ImageIcon("Images/card3.jpg"));
             add(image);
         }
         else
