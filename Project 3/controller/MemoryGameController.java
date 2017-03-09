@@ -61,7 +61,8 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
             gameModel.addCardToSelection(cardModel);
             if (gameModel.endGame() && gameModel.twoCardsSelected()) {
                 mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getTurnCounter()));
-            }
+            }        if (gameModel.isPair()) {
+                gameView.greenBackground();}
         }
     }
 
@@ -71,12 +72,14 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
      */
     public static void removePair() {
         if (gameModel.isPair()) {
+            gameView.greenBackground();
+
             gameModel.removePair();
             pairCounter.setText(gameModel.getPairCounter());
             turnCounter.setText(gameModel.getTurnCounter());
-            gameView.greenBackground();
+
         } else {
-            gameView.redBackground();
+            if (gameModel.twoCardsSelected()){gameView.redBackground();}
         }
     }
 
