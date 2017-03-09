@@ -10,8 +10,20 @@ import static org.junit.Assert.*;
 /**
  * Created by David on 3/4/17.
  */
+
+/**
+ * Tests the GameModel to make sure
+ * the correct number of cards and pairs
+ * are distributed.
+ */
 public class GameModelTest {
     @org.junit.Test
+
+    /**
+     * Checks that a new deck can deal 72 cards without
+     * the incorrect number of duplicates (expects only
+     * 2 cards to match).
+     */
     public void test_CanDealSevenTwo() {
         System.out.println ("\nTest if deck has 36 unique cards \n -------------------- ");
         DeckModel g = new DeckModel();
@@ -21,6 +33,11 @@ public class GameModelTest {
     }
 
     @org.junit.Test
+
+    /**
+     * Creates a deck and checks the number of pairs in the deck to
+     * confirm that the pair number is correct.
+     */
     public void test_Length(){
         System.out.println("Test if deck has 36 pairs \n -------------------");
         DeckModel k = new DeckModel();
