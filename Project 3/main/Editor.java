@@ -54,7 +54,6 @@ public class Editor {
         goToUserID();
         frame.pack();
         frame.setVisible(true);
-
     }
 
     /**
