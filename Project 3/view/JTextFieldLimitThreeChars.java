@@ -17,6 +17,17 @@ public class JTextFieldLimitThreeChars extends PlainDocument {
         limit = THREE_CHARS;
     }
 
+    /**
+     * Takes a string of three characters and is used to
+     * either become the title of a plain text document
+     * or gets an existing document of the same title for
+     * updating.  This is called as long the player hasn't
+     * inputted a three character string yet.
+     * @param offset
+     * @param str
+     * @param attr
+     * @throws BadLocationException
+     */
     public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {
         if (str == null) return;
 
