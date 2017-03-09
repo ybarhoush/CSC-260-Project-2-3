@@ -111,12 +111,18 @@ public class GameView extends JPanel implements Observer {
         }
     }
 
+    /**
+     * Highlights a card in green.
+     */
     public void greenBackground() {
         for (CardView cardView : cardViewMap.values()) {
             cardView.greenBackground();
         }
     }
 
+    /**
+     * Highlights a card in red.
+     */
     public void redBackground() {
         for (CardView cardView : cardViewMap.values()) {
             cardView.redBackground();
