@@ -16,13 +16,8 @@ import java.util.List;
  */
 public class CardView extends JPanel {
 
-    private static final Border raisedbevel = BorderFactory.createRaisedBevelBorder();
-
+    private static final Border loweredBevelBorder = BorderFactory.createLoweredBevelBorder();
     private static JLabel image;
-    private static ImageIcon icon = new ImageIcon("Images/index.jpg");
-    //private static final Border loweredbevel = BorderFactory.createMatteBorder(0, 50, 50, 0, icon );
-    //private static final Border selectedBorder = BorderFactory.createCompoundBorder(raisedbevel, loweredbevel);
-
 
     private CardModel cardModel;
     private List<Shape> shapeViewList;
@@ -38,8 +33,8 @@ public class CardView extends JPanel {
         this.shapeViewList = new ArrayList<>();
 
         setLayout(new GridLayout(1, 3));
-        setBackground(Color.WHITE);
-        addShapes();
+        setBackground(Color.white);
+        //addShapes();
         toggleSelection();
     }
 
@@ -50,6 +45,7 @@ public class CardView extends JPanel {
         for (int i = 0; i < cardModel.getShapeNum(); i++) {
             Shape shape = ShapeFactory.buildShape(cardModel);
             add(shape);
+            shape.setVisible(true);
             shapeViewList.add(shape);
         }
     }
@@ -70,12 +66,18 @@ public class CardView extends JPanel {
      */
     private void toggleSelection() {
         if (cardModel.isSelected() == false) {
-            //setBorder(loweredbevel);
-            image = new JLabel(new ImageIcon("Images/index.jpg"));
-            add(image, "Center");
 
+            image = new JLabel(new ImageIcon("Images/card5.gif"));
+            add(image);
+        }
+        else
+        {
+            setBorder(loweredBevelBorder);
+            addShapes();
         }
     }
+
+
 
     public void greenBackground() {
         if (cardModel.isSelected() == true && cardModel.getShapeNum() != 0) {
