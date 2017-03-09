@@ -77,14 +77,18 @@ public class CardView extends JPanel {
         }
     }
 
-
-
+    /**
+     * Changes the background of a card to green when still in play.
+     */
     public void greenBackground() {
         if (cardModel.isSelected() == true && cardModel.getShapeNum() != 0) {
             setBackground(Color.green);
         }
     }
 
+    /**
+     * Changes the background of a card to red when still in play.
+     */
     public void redBackground() {
         if (cardModel.isSelected() == true && cardModel.getShapeNum() != 0) {
             setBackground(Color.red);

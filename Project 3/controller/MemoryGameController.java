@@ -51,7 +51,9 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
 
     /**
      * What to do when the user clicks a card. If two cards are selected, and if
-     * they are a pair, then wait for user's next button click
+     * they are a pair, then wait for user's next button click.  If a pair is
+     * found, the two cards will be highlighted in green to confirm that they
+     * are identical.
      *
      * @param cardModel the card that the user clicks
      */
@@ -68,7 +70,9 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
 
     /**
      * causes the two cards to be removed from the playing field and the pair counter to increase by 1
-     * (the system must verify that the two cards really are a pair).
+     * (the system must verify that the two cards really are a pair).  If the player attempts to remove
+     * the cards when they are not a pair, the two cards will be highlighted in red to show they
+     * don't match.
      */
     public static void removePair() {
         if (gameModel.isPair()) {

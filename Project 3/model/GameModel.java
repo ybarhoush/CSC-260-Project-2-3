@@ -181,7 +181,8 @@ public class GameModel extends Observable {
     }
 
     /**
-     *
+     *When called, any selected cards no longer become "selected"
+     * and return the cards back to their flipped state.
      */
     public void clearSelectedCards() {
         for (CardModel selectedCard : selectedCards) {
