@@ -61,16 +61,15 @@ public class CardView extends JPanel {
     }
 
     /**
-     * Sets
+     * Sets the back of the card to the designated image. When a card is not selected,
+     * it returns the corresponding shape to the card.
      */
     private void toggleSelection() {
         if (cardModel.isSelected() == false) {
 
             image = new JLabel(new ImageIcon("Images/card3.jpg"));
             add(image);
-        }
-        else
-        {
+        } else {
             setBorder(loweredBevelBorder);
             addShapes();
         }
