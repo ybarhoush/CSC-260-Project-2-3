@@ -48,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CardView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/CardView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="536">
@@ -72,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EndGameView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EndGameView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/EndGameView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="83" column="38" lean-forward="false" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
+            <state relative-caret-position="500">
+              <caret line="182" column="1" lean-forward="true" selection-start-line="182" selection-start-column="1" selection-end-line="182" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -149,7 +149,6 @@
         <option value="$PROJECT_DIR$/main/Game.java" />
         <option value="$PROJECT_DIR$/readAndWrite/ReadFromFile.java" />
         <option value="$PROJECT_DIR$/readAndWrite/WriteToFile.java" />
-        <option value="$PROJECT_DIR$/view/EndGameView.java" />
         <option value="$PROJECT_DIR$/model/CardModel.java" />
         <option value="$PROJECT_DIR$/main/Editor.java" />
         <option value="$PROJECT_DIR$/model/DeckModel.java" />
@@ -161,6 +160,7 @@
         <option value="$PROJECT_DIR$/shape/Shape.java" />
         <option value="$PROJECT_DIR$/model/GameModel.java" />
         <option value="$PROJECT_DIR$/view/CardView.java" />
+        <option value="$PROJECT_DIR$/view/EndGameView.java" />
       </list>
     </option>
   </component>
@@ -571,12 +571,12 @@
       <workItem from="1488952289160" duration="27000" />
       <workItem from="1488986501324" duration="2153000" />
       <workItem from="1488988798965" duration="48000" />
-      <workItem from="1489101661845" duration="1411000" />
+      <workItem from="1489101661845" duration="1623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10909000" />
+    <option name="totallyTimeSpent" value="11121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -977,14 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/EndGameView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="83" column="38" lean-forward="false" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/CardView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
@@ -992,6 +984,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/EndGameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="182" column="1" lean-forward="true" selection-start-line="182" selection-start-column="1" selection-end-line="182" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
