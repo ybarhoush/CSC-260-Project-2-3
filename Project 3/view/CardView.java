@@ -61,8 +61,7 @@ public class CardView extends JPanel {
     }
 
     /**
-     * Sets the border of the face of a card object with a strokeBorder
-     * when it is not selected by the user.
+     * Sets
      */
     private void toggleSelection() {
         if (cardModel.isSelected() == false) {
