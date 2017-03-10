@@ -12,9 +12,6 @@ import view.GameViewListener;
  * Represents the controls of the game screen of the Memory mode.
  * This class holds the view and the model together and allows communication
  * between the data and what the user sees.
- *
- * Made by
- * Edited by Nicholas Van Nostrand on 3/7/2017.
  */
 
 public class MemoryGameController extends MemoryCmdbarView implements GameViewListener {
@@ -63,13 +60,15 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
             gameModel.addCardToSelection(cardModel);
             if (gameModel.endGame() && gameModel.twoCardsSelected()) {
                 mainListener.goToEndGameView(currentFileName, Integer.parseInt(gameModel.getTurnCounter()));
-            }        if (gameModel.isPair()) {
-                gameView.greenBackground();}
+            }
+            if (gameModel.isPair()) {
+                gameView.greenBackground();
+            }
         }
     }
 
     /**
-     * causes the two cards to be removed from the playing field and the pair counter to increase by 1
+     * Causes the two cards to be removed from the playing field and the pair counter to increase by 1
      * (the system must verify that the two cards really are a pair).  If the player attempts to remove
      * the cards when they are not a pair, the two cards will be highlighted in red to show they
      * don't match.
@@ -83,7 +82,9 @@ public class MemoryGameController extends MemoryCmdbarView implements GameViewLi
             turnCounter.setText(gameModel.getTurnCounter());
 
         } else {
-            if (gameModel.twoCardsSelected()){gameView.redBackground();}
+            if (gameModel.twoCardsSelected()) {
+                gameView.redBackground();
+            }
         }
     }
 
