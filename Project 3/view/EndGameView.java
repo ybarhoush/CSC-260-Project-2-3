@@ -99,7 +99,7 @@ public class EndGameView extends JPanel {
     }
 
     /**
-     * Adds player's most recent score to data sheet
+     * Adds player's most recent score to data sheet.
      */
     private void addCurrentScore(){
         WriteToFile addScore = new WriteToFile(fileName, Integer.toString(this.score),true);
@@ -133,7 +133,7 @@ public class EndGameView extends JPanel {
     }
 
     /**
-     * Makes an array to length ten
+     * Makes an array to length ten.
      * @param list to shorten
      * @return list with 10 elements
      */
@@ -146,7 +146,7 @@ public class EndGameView extends JPanel {
     }
 
     /**
-     * Removes all duplicates in a given list
+     * Removes all duplicates in a given list.
      * @param list list to remove duplicates from
      * @return list with no duplicates
      */
