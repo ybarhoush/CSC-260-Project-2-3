@@ -5,12 +5,10 @@ import java.util.List;
 import java.util.Observable;
 
 /**
+ * GameModel.java
  * GameModel is the backbone of the game. Using the observer pattern
  * the gameModel is able to see how the gameView changes (user input)
  * and reacts appropriately with proper methods.
- *
- * Made by
- * Edited by Nicholas Van Nostrand on 3/7/2017.
  */
 public class GameModel extends Observable {
 
@@ -26,7 +24,7 @@ public class GameModel extends Observable {
     private boolean isPlaying;
 
     /**
-     * This creates a new GameModel that holds the cards displayed
+     * Creates a new GameModel that holds the cards displayed
      * and the cards that the user selects.
      */
     public GameModel() {
@@ -55,8 +53,7 @@ public class GameModel extends Observable {
     }
 
     /**
-     * This methods deals 12 cards on the table
-     * when the game first starts.
+     * Deals 72 cards on the table when the game first starts.
      */
     private void dealSeventyTwo() {
         for (int i = 0; i < CARDS_ON_TABLE; i++) {
@@ -84,23 +81,24 @@ public class GameModel extends Observable {
     }
 
     /**
-     *Turns over selected cards to show card designs.  Also
+     * Turns over selected cards to show card designs.  Also
      * increments the turn counter.
      */
     public void turnOverCards() {
-            for (CardModel selectedCard : selectedCards) {
-                selectedCard.isSelected();
-            }
-            addTurn();
-            clearSelectedCards();
-            setChanged();
-            notifyObservers();
+        for (CardModel selectedCard : selectedCards) {
+            selectedCard.isSelected();
         }
+        addTurn();
+        clearSelectedCards();
+        setChanged();
+        notifyObservers();
+    }
 
-        /**
-         * Checks to see if the 2 cards selected by the player are a pair.
-         * @return true iff the two selected cards are a pair
-         */
+    /**
+     * Checks to see if the 2 cards selected by the player are a pair.
+     *
+     * @return true iff the two selected cards are a pair
+     */
 
     public boolean isPair() {
         if (twoCardsSelected()) {
@@ -157,9 +155,12 @@ public class GameModel extends Observable {
     /**
      * Returns boolean that states whether or not the card that
      * was selected was already chosen.
+     *
      * @return boolean stating if cards were already removed
      */
-    public List<CardModel> cardsRemoved() {return this.removedCards;}
+    public List<CardModel> cardsRemoved() {
+        return this.removedCards;
+    }
 
     /**
      * Returns the cards that are currently displayed to the player
@@ -180,7 +181,7 @@ public class GameModel extends Observable {
     }
 
     /**
-     *When called, any selected cards no longer become "selected"
+     * When called, any selected cards no longer become "selected"
      * and return the cards back to their flipped state.
      */
     public void clearSelectedCards() {
@@ -217,6 +218,7 @@ public class GameModel extends Observable {
 
     /**
      * Returns the turn counter number in string form.
+     *
      * @return String of turn counter
      */
     public String getTurnCounter() {
@@ -232,6 +234,7 @@ public class GameModel extends Observable {
 
     /**
      * Returns the pair counter number in string form.
+     *
      * @return String of pair counter
      */
     public String getPairCounter() {
@@ -241,6 +244,7 @@ public class GameModel extends Observable {
     /**
      * Return boolean stating that the game has ended if all pairs
      * have been chosen.
+     *
      * @return boolean for if the game has ended
      */
     public boolean endGame() {
