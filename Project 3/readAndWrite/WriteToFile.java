@@ -11,16 +11,20 @@ import java.io.PrintWriter;
  */
 public class WriteToFile {
 
+    /**
+     * Constructor that writes into a file.
+     * @param fileName the name of the file
+     * @param lineToAdd string object
+     * @param fileExists 1 if the file exists, 0 if it does not
+     */
+    public WriteToFile(String fileName, String lineToAdd, boolean fileExists) {
 
-    public WriteToFile(String fileName, String lineToAdd, boolean fileExists){
-
-        try (FileWriter fw = new FileWriter("Players/" + fileName,fileExists);
-            BufferedWriter bw = new BufferedWriter(fw);
-             PrintWriter pw = new PrintWriter(bw))
-        {
+        try (FileWriter fw = new FileWriter("Players/" + fileName, fileExists);
+             BufferedWriter bw = new BufferedWriter(fw);
+             PrintWriter pw = new PrintWriter(bw)) {
             pw.println(lineToAdd);
             pw.close();
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("ERROR");
         }
     }

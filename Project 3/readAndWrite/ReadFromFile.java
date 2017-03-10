@@ -10,10 +10,13 @@ import java.util.ArrayList;
  * data written in the given file name in the Players package
  */
 public class ReadFromFile {
-    private String  fileName;
-    private ArrayList<String > strings;
+    private String fileName;
+    private ArrayList<String> strings;
 
     /**
+     * Constructs a new array list and concatenates with a string
+     * after it takes the filename as an argument.
+     *
      * @param fileName file to be read from
      */
     public ReadFromFile(String fileName) {
@@ -23,9 +26,10 @@ public class ReadFromFile {
 
     /**
      * List of strings, each string is data from one line in the txt file
+     *
      * @return array list, each line is an element
      */
-    public ArrayList<String> returnStrings(){
+    public ArrayList<String> returnStrings() {
         try {
             FileReader fr = new FileReader(this.fileName);
             BufferedReader br = new BufferedReader(fr);
